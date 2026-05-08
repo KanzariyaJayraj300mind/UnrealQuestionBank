@@ -102,31 +102,35 @@ body::before {
 }
 
 .sidebar {
-  display: grid;
-  gap: 12px;
   position: sticky;
   top: 18px;
 }
 
-.sidebar-card {
-  padding: 16px;
+.hero-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
   border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, rgba(16, 28, 42, 0.88), rgba(8, 16, 26, 0.88));
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
 }
 
-.sidebar-label {
-  margin: 0 0 8px;
+.hero-card div {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-label {
+  display: block;
   color: var(--muted);
   font-size: 0.72rem;
+  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
 }
 
-.sidebar-card strong {
-  font-size: 1.7rem;
+.hero-card strong {
+  font-size: clamp(1.3rem, 2.5vw, 1.85rem);
   letter-spacing: -0.04em;
 }
 
@@ -242,8 +246,13 @@ body::before {
 
 .filter-drawer {
   position: relative;
-  margin-top: 18px;
+  margin-top: 0;
   z-index: 19;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition), max-height var(--transition);
 }
 
 .filter-drawer-surface {
@@ -259,6 +268,13 @@ body::before {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 16px;
+}
+
+.filter-drawer.is-open {
+  margin-top: 18px;
+  max-height: 2000px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .filters {
@@ -290,7 +306,6 @@ body::before {
 }
 
 .chip-row,
-.tag-row,
 .active-list {
   display: flex;
   flex-wrap: wrap;
@@ -371,8 +386,8 @@ body::before {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  padding: 4px 8px;
-  font-size: 0.68rem;
+  padding: 3px 7px;
+  font-size: 0.62rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -447,11 +462,6 @@ body::before {
 
   .sidebar {
     position: static;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .sidebar-card strong {
-    font-size: 1.35rem;
   }
 
   .active-filters,
@@ -470,10 +480,6 @@ body::before {
     width: 100%;
   }
 
-  .sidebar-card {
-    padding: 14px;
-  }
-
   .toolbar {
     gap: 14px;
   }
@@ -487,23 +493,21 @@ body::before {
     flex: 1 1 0;
   }
 
-  .filter-toggle {
-    display: inline-flex;
-  }
-
   .filter-drawer {
     position: fixed;
     inset: auto 12px 12px 12px;
     z-index: 20;
     margin-top: 0;
-    transform: translateY(120%);
+    max-height: 0;
     opacity: 0;
     pointer-events: none;
-    transition: transform 220ms ease, opacity 220ms ease;
+    transition: transform 220ms ease, opacity 220ms ease, max-height 220ms ease;
+    transform: translateY(120%);
   }
 
   .filter-drawer.is-open {
     transform: translateY(0);
+    max-height: 72vh;
     opacity: 1;
     pointer-events: auto;
   }
@@ -521,24 +525,6 @@ body::before {
 
   .filter-close {
     flex: 0 0 auto;
-  }
-}
-
-@media (min-width: 781px) {
-  .filter-toggle {
-    display: none;
-  }
-
-  .filter-backdrop {
-    display: none;
-  }
-
-  .filter-drawer {
-    position: relative;
-    inset: auto;
-    transform: none !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
   }
 }
 

@@ -8,7 +8,6 @@ const state = {
 };
 
 let questions = [];
-const excludedSubtopics = new Set(["Scenario based"]);
 
 const elements = {
   questionCount: document.getElementById("questionCount"),
@@ -42,10 +41,7 @@ function buildChip(label, value, type, active) {
 
 function renderFilterGroups() {
   const difficulties = ["All", ...new Set(questions.map((item) => item.difficulty))];
-  const subtopics = [
-    "All",
-    ...new Set(questions.map((item) => item.subtopic)).filter((subtopic) => !excludedSubtopics.has(subtopic)),
-  ];
+  const subtopics = ["All", ...new Set(questions.map((item) => item.subtopic))];
   const categories = ["All", ...new Set(questions.map((item) => item.category))];
   const tags = [...new Set(questions.flatMap((item) => item.tags))].sort((a, b) =>
     a.localeCompare(b),
@@ -227,8 +223,7 @@ function update() {
 }
 
 function syncFilterDrawer() {
-  const isMobile = window.matchMedia("(max-width: 780px)").matches;
-  const isOpen = isMobile ? state.filterDrawerOpen : true;
+  const isOpen = state.filterDrawerOpen;
   elements.filterDrawer.classList.toggle("is-open", isOpen);
   elements.filterBackdrop.classList.toggle("is-open", isOpen);
   elements.filterToggle.setAttribute("aria-expanded", String(isOpen));
@@ -236,7 +231,7 @@ function syncFilterDrawer() {
 }
 
 async function loadQuestions() {
-  const response = await fetch(new URL("./data/questions.json", window.location.href));
+  const response = await fetch("./data/questions.json", { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`Failed to load question data: ${response.status}`);
   }
@@ -287,7 +282,6 @@ function bindControls() {
       if (type === "difficulty") {
         state.difficulty = state.difficulty === value ? "All" : value;
       } else if (type === "subtopic") {
-        if (excludedSubtopics.has(value)) return;
         state.subtopic = state.subtopic === value ? "All" : value;
       } else if (type === "category") {
         state.category = state.category === value ? "All" : value;
@@ -323,9 +317,9 @@ async function boot() {
   } catch (error) {
     console.error(error);
     elements.resultsMeta.textContent =
-      "Could not load data. Open the site through GitHub Pages or a local static server.";
+      "Could not load data. Run the site through a static server and make sure data/questions.json exists.";
     elements.questionList.innerHTML =
-      '<div class="empty-state">Unable to load question data from data/questions.json.</div>';
+      '<div class="empty-state">Unable to load question data. Open the site through a local static server.</div>';
   }
 }
 
