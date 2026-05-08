@@ -1,0 +1,58 @@
+[
+  {
+    "question": "What is composition over inheritance in Unreal Engine?",
+    "answer": "Composition over inheritance means building features from reusable components, interfaces, and subsystems instead of relying on deep class hierarchies.",
+    "subtopic": "Architecture",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["architecture", "composition", "inheritance", "components"]
+  },
+  {
+    "question": "How do delegates and interfaces help decouple systems?",
+    "answer": "Delegates let one system broadcast events without knowing who listens, and interfaces let unrelated classes share a contract without depending on a concrete implementation.",
+    "subtopic": "Architecture",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["architecture", "delegates", "interfaces", "decoupling"]
+  },
+  {
+    "question": "How would you design a reusable interaction system for many object types without creating tight coupling?",
+    "answer": "Use an interaction interface for the contract, a shared interaction component or subsystem for orchestration, and delegates or events to notify UI, audio, or gameplay systems when interactions happen.",
+    "subtopic": "Architecture",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["architecture", "interaction", "interfaces", "events", "decoupling"]
+  },
+  {
+    "question": "How would you structure a project so gameplay logic, UI, and save data do not depend on each other directly?",
+    "answer": "Keep gameplay state in gameplay classes or components, drive UI through view-model style data or events, and isolate save data in dedicated data objects, subsystems, or managers with one-way dependencies where possible.",
+    "subtopic": "Architecture",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["architecture", "ui", "save data", "dependency", "design"]
+  },
+  {
+    "question": "When would you use a subsystem instead of an actor or component for global game logic?",
+    "answer": "Use a subsystem when the logic is global, persistent across levels, and not tied to world placement or actor lifecycle. A subsystem is better for managers such as settings, session state, or reusable service-style logic.",
+    "subtopic": "Architecture",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["architecture", "subsystem", "manager", "global logic"]
+  },
+  {
+    "question": "How would you avoid circular dependencies between gameplay modules in Unreal C++?",
+    "answer": "Use interfaces, forward declarations, event dispatchers, and minimal public module dependencies. Move shared abstractions into a lower-level module and keep concrete feature modules depending on that abstraction instead of each other.",
+    "subtopic": "Architecture",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["architecture", "cpp", "modules", "dependencies", "circular dependency"]
+  },
+  {
+    "question": "How would you design an event-driven gameplay flow instead of polling state every tick?",
+    "answer": "Use delegates, gameplay events, replication callbacks, and state change notifications so systems react only when values change. This reduces tick cost and keeps logic easier to reason about than continuous polling.",
+    "subtopic": "Architecture",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["architecture", "event-driven", "delegates", "tick", "performance"]
+  }
+]

@@ -115,5 +115,31 @@
       "umg",
       "optimization"
     ]
+  },
+  {
+    "question": "What is the difference between Slate and UMG?",
+    "answer": "Slate is Unreal's low-level UI framework, while UMG is the higher-level widget system built on top of Slate for faster UI creation in Blueprints and C++.",
+    "subtopic": "UMG",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "umg",
+      "slate",
+      "ui",
+      "framework"
+    ]
+  },
+  {
+    "question": "When would you use a Retainer Box instead of an Invalidation Box?",
+    "answer": "Use a Retainer Box when you want to cache and redraw a widget tree at a lower frequency, often for expensive visual effects or UI that does not need to update every frame.",
+    "subtopic": "UMG",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "umg",
+      "retainer box",
+      "invalidation",
+      "performance"
+    ]
   }
 ]

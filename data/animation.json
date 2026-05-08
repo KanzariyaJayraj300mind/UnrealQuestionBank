@@ -115,5 +115,31 @@
       "fast path",
       "optimization"
     ]
+  },
+  {
+    "question": "What is Root Motion in Unreal Engine and when would you use it?",
+    "answer": "Root Motion lets the animation drive the actor's movement. It is useful when the motion must come from the authored animation, such as attacks, rolls, or precise turn-in-place actions.",
+    "subtopic": "animations",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "animation",
+      "root motion",
+      "movement",
+      "montage"
+    ]
+  },
+  {
+    "question": "What is an Aim Offset used for?",
+    "answer": "An Aim Offset blends animation poses based on aim direction so the upper body can aim in different directions without needing a separate animation for every angle.",
+    "subtopic": "animations",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "animation",
+      "aim offset",
+      "blend",
+      "upper body"
+    ]
   }
 ]

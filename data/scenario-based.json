@@ -203,5 +203,19 @@
       "browse",
       "lobby"
     ]
+  },
+  {
+    "question": "A character mesh has several material slots and the scene is suffering from too many draw calls. How would you approach the problem?",
+    "answer": "Reduce the number of material slots where possible, merge materials, reuse material instances, and review whether some surface variation can be handled in one material with masks instead of multiple slots. Fewer slots generally means fewer draw calls.",
+    "subtopic": "optimization",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": [
+      "draw calls",
+      "material slots",
+      "optimization",
+      "materials",
+      "performance"
+    ]
   }
 ]

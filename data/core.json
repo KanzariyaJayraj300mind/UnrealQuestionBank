@@ -128,5 +128,44 @@
       "debugging",
       "assertions"
     ]
+  },
+  {
+    "question": "What is the difference between TWeakObjectPtr and a raw UObject pointer?",
+    "answer": "A TWeakObjectPtr tracks object validity without keeping the object alive, while a raw UObject pointer does not help you detect when the object has been destroyed or collected.",
+    "subtopic": "cpp",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "cpp",
+      "weak pointer",
+      "uobject",
+      "garbage collection"
+    ]
+  },
+  {
+    "question": "Why would you use forward declarations in Unreal C++?",
+    "answer": "Forward declarations reduce compile dependencies and build times by letting you reference a type without including its full header until you actually need the full definition.",
+    "subtopic": "cpp",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "cpp",
+      "forward declaration",
+      "headers",
+      "compile time"
+    ]
+  },
+  {
+    "question": "What does GENERATED_BODY do in an Unreal class?",
+    "answer": "GENERATED_BODY injects boilerplate needed by Unreal's reflection system so the class can participate in serialization, Blueprint exposure, and other engine features.",
+    "subtopic": "cpp",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "cpp",
+      "generated body",
+      "reflection",
+      "unreal macros"
+    ]
   }
 ]

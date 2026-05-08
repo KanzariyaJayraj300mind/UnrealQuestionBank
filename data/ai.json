@@ -134,5 +134,33 @@
       "sequence",
       "behavior tree"
     ]
+  },
+  {
+    "question": "How would you make an AI investigate a sound before returning to patrol?",
+    "answer": "Use an AI Perception hearing event to set a blackboard location, switch the behavior tree into an investigate state, move to the sound location, and then return to patrol when the investigation finishes or times out.",
+    "subtopic": "AI",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "ai",
+      "perception",
+      "hearing",
+      "investigate",
+      "patrol"
+    ]
+  },
+  {
+    "question": "What is the difference between a behavior tree service and a decorator?",
+    "answer": "A service runs alongside a branch and updates values periodically, while a decorator gates whether a branch can execute or stay active based on a condition.",
+    "subtopic": "AI",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "ai",
+      "behavior tree",
+      "service",
+      "decorator",
+      "logic"
+    ]
   }
 ]

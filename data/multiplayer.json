@@ -76,5 +76,33 @@
       "clienttravel",
       "seamless travel"
     ]
+  },
+  {
+    "question": "How would you replicate a weapon ammo count or reload state in multiplayer?",
+    "answer": "Keep the authoritative state on the server and replicate the ammo or reload variables to clients, using RepNotify if clients need to react immediately when the value changes.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "multiplayer",
+      "replication",
+      "ammo",
+      "reload",
+      "repnotify"
+    ]
+  },
+  {
+    "question": "When would you use a reliable RPC versus an unreliable RPC?",
+    "answer": "Use reliable RPCs for important gameplay events that must arrive, such as inventory changes or state transitions. Use unreliable RPCs for frequent transient updates like cosmetic effects or rapid input-driven events where occasional loss is acceptable.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "multiplayer",
+      "rpc",
+      "reliable",
+      "unreliable",
+      "networking"
+    ]
   }
 ]

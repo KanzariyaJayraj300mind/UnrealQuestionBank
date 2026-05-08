@@ -1,0 +1,18 @@
+[
+  {
+    "question": "What is Niagara and how is it different from Cascade?",
+    "answer": "Niagara is Unreal's newer particle and VFX system with more flexibility, data-driven workflows, and better scaling than the older Cascade system.",
+    "subtopic": "VFX",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["vfx", "niagara", "cascade", "particles"]
+  },
+  {
+    "question": "How would you optimize a VFX-heavy scene?",
+    "answer": "Reduce spawn rates, cull effects by distance, disable invisible emitters, keep shader and overdraw cost low, and avoid unnecessary expensive updates every frame.",
+    "subtopic": "VFX",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["vfx", "optimization", "culling", "overdraw"]
+  }
+]

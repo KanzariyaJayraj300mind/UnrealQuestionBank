@@ -1,0 +1,66 @@
+[
+  {
+    "question": "What is the difference between a Material Instance and a Material Instance Dynamic?",
+    "answer": "A Material Instance is a static child of a parent material with editable parameters. A Material Instance Dynamic is created at runtime and lets you change parameters in gameplay code or Blueprint.",
+    "subtopic": "material",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["material", "material instance", "dynamic material instance", "runtime"]
+  },
+  {
+    "question": "What is World Position Offset in a material and when is it useful?",
+    "answer": "World Position Offset moves vertices in the shader. It is useful for effects like wind, simple deformation, or subtle surface motion without changing the mesh itself.",
+    "subtopic": "material",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["material", "world position offset", "vertex deformation", "shader"]
+  },
+  {
+    "question": "What is the difference between opaque, masked, translucent, and additive materials?",
+    "answer": "Opaque materials are fully solid, masked materials discard pixels by a threshold, translucent materials support partial transparency but are more expensive, and additive materials add light-like contribution for effects such as glows or particles.",
+    "subtopic": "material",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["material", "opacity", "translucent", "masked", "additive"]
+  },
+  {
+    "question": "How do material parameters help with optimization and flexibility?",
+    "answer": "Material parameters let you change values like color, roughness, or scalar controls without creating new materials, which reduces duplication and makes runtime tweaking easier through instances.",
+    "subtopic": "material",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["material", "parameters", "optimization", "instances"]
+  },
+  {
+    "question": "What is a Material Parameter Collection used for?",
+    "answer": "A Material Parameter Collection shares parameters across many materials at once, which is useful for global changes like time of day, weather, or a season system.",
+    "subtopic": "material",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["material", "material parameter collection", "global parameters", "shader"]
+  },
+  {
+    "question": "When would you use a layered material approach?",
+    "answer": "Use layered materials when you want to combine multiple surface looks, such as dirt over metal or wetness over concrete, while keeping the material setup reusable and controllable.",
+    "subtopic": "material",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["material", "layered material", "surface", "shader"]
+  },
+  {
+    "question": "How would you reduce the performance cost of a complex material?",
+    "answer": "Reduce instruction count, avoid expensive translucent overdraw, simplify texture sampling, minimize dynamic branching, reuse parameters, and move expensive work out of the pixel shader when possible.",
+    "subtopic": "material",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["material", "performance", "shader", "overdraw", "optimization"]
+  },
+  {
+    "question": "What is the purpose of a Custom node in a material graph?",
+    "answer": "A Custom node lets you write custom HLSL code inside the material graph for specialized shader logic that is awkward to build from standard nodes.",
+    "subtopic": "material",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["material", "custom node", "hlsl", "shader"]
+  }
+]

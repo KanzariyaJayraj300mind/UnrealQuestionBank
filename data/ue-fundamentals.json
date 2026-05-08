@@ -403,5 +403,31 @@
       "latency",
       "frame rate"
     ]
+  },
+  {
+    "question": "What is the difference between BeginPlay, OnConstruction, and Construction Script?",
+    "answer": "Construction logic runs when the actor is created or updated in the editor, OnConstruction runs on the C++ side for construction-time setup, and BeginPlay runs when the game starts and the actor enters play.",
+    "subtopic": "fundamentals",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "beginplay",
+      "construction",
+      "lifecycle",
+      "actor"
+    ]
+  },
+  {
+    "question": "What is the difference between GameThread, RenderThread, and RHIThread at a high level?",
+    "answer": "The GameThread handles gameplay and actor logic, the RenderThread prepares rendering work, and the RHIThread communicates with the graphics API or driver layer on supported builds.",
+    "subtopic": "fundamentals",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "gamethread",
+      "renderthread",
+      "rhi",
+      "engine architecture"
+    ]
   }
 ]

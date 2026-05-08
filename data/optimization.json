@@ -200,5 +200,32 @@
       "gameplay",
       "collision"
     ]
+  },
+  {
+    "question": "What is HLOD and why is it useful in large worlds?",
+    "answer": "Hierarchical LOD groups distant meshes into simplified clusters so the engine can render fewer, cheaper objects when the player is far away from an area.",
+    "subtopic": "optimization",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "hlod",
+      "large world",
+      "lod",
+      "optimization"
+    ]
+  },
+  {
+    "question": "How do you decide whether a scene is CPU-bound or GPU-bound?",
+    "answer": "Use profiling tools to compare game thread, render thread, and GPU timings. If the CPU threads dominate, you need gameplay or draw-call optimization. If the GPU dominates, focus on rendering cost, materials, overdraw, shadows, and post-process work.",
+    "subtopic": "optimization",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "optimization",
+      "cpu bound",
+      "gpu bound",
+      "profiling",
+      "performance"
+    ]
   }
 ]
