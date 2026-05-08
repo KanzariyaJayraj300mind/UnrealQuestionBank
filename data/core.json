@@ -62,5 +62,21 @@
     "difficulty": "Beginner",
     "category": "Core",
     "tags": ["address", "pointer", "memory", "c++"]
+  },
+  {
+    "question": "What is a memory leak?",
+    "answer": "A memory leak happens when a program fails to release memory that it no longer needs, causing memory usage to keep growing over time.",
+    "subtopic": "Memory",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["memory leak", "memory", "allocation", "c++"]
+  },
+  {
+    "question": "What is the difference between ensure and check in Unreal Engine?",
+    "answer": "ensure is mainly for runtime debugging in debug builds and reports a problem without always stopping execution. check is a stronger assertion used in debug and release builds to catch invalid conditions early.",
+    "subtopic": "Debugging",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["ensure", "check", "debugging", "assertions"]
   }
 ]

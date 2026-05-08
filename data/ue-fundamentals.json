@@ -102,5 +102,77 @@
     "difficulty": "Beginner",
     "category": "Scenario based",
     "tags": ["damage", "instigator", "causer", "scenario", "multiplayer"]
+  },
+  {
+    "question": "What are Blueprint Interfaces in Unreal Engine, and when would you use them?",
+    "answer": "Blueprint Interfaces define a common set of functions that multiple Blueprints can implement. They are useful when different Blueprint classes need to communicate without knowing each other's concrete class.",
+    "subtopic": "Blueprints",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["blueprint interface", "communication", "decoupling", "blueprints"]
+  },
+  {
+    "question": "What are the different methods of packaging a game in Unreal Engine, and what build configurations are available?",
+    "answer": "You can package through the Toolbar Platforms menu, the Project Launcher, or automation with RunUAT.exe. Common build configurations are Debug, Development, Shipping, and Test.",
+    "subtopic": "Packaging",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["packaging", "build configuration", "debug", "shipping", "uat"]
+  },
+  {
+    "question": "What are modules in Unreal Engine and how is module loading managed?",
+    "answer": "Modules are common building blocks of a game or plugin. They are declared in .uproject or .uplugin files, and loading is controlled by the LoadingPhase setting such as PostSplashScreen, PreLoadingScreen, Default, PostEngineInit, or manual loading.",
+    "subtopic": "Modules",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["modules", "loading phase", "uproject", "uplugin"]
+  },
+  {
+    "question": "What is required to access a class across another module?",
+    "answer": "You need to add the other module as a Public dependency in the consuming module's Build.cs file so the classes are visible to that module.",
+    "subtopic": "Modules",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["modules", "build.cs", "dependencies", "public dependency"]
+  },
+  {
+    "question": "Where are collision channel settings and other project settings stored?",
+    "answer": "They are stored in Config/DefaultEngine.ini. That file can also contain project name, supported platforms, target hardware, graphics settings, redirectors, DirectX version, physics channels, physics surfaces, default maps, default GameMode, default GameInstance, plugin-specific settings, and config-based UPROPERTY values.",
+    "subtopic": "Config",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["config", "defaultengine.ini", "collision channels", "project settings"]
+  },
+  {
+    "question": "How do you expose a C++ function or variable to Blueprints?",
+    "answer": "Use UFUNCTION for functions and UPROPERTY for variables. Common specifiers include BlueprintReadWrite, BlueprintReadOnly, BlueprintCallable, and BlueprintPure.",
+    "subtopic": "Blueprints",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["c++", "blueprint", "ufunction", "uproperty"]
+  },
+  {
+    "question": "How do you make a function execute in both Blueprint and C++?",
+    "answer": "Use a BlueprintNativeEvent. C++ gets the [FunctionName]_Implementation method, and Blueprint can override the event while still keeping the native default behavior.",
+    "subtopic": "Blueprints",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["blueprintnativeevent", "cpp", "blueprint", "implementation"]
+  },
+  {
+    "question": "What is a pak file in Unreal Engine and how does it help updates?",
+    "answer": "Pak files are created during packaging and store game content efficiently. They help organize content, improve loading, and make updates easier because related assets can be grouped so only the changed pak needs to be distributed.",
+    "subtopic": "Packaging",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["pak file", "packaging", "updates", "content"]
+  },
+  {
+    "question": "What do you think about using a Data Table with meshes and materials for a customizable actor, and what is the difference between soft and hard references?",
+    "answer": "It is acceptable, but hard references will load the assets immediately, which can increase load time and memory usage. Soft references are better when you want to load meshes or other assets only when they are needed.",
+    "subtopic": "Asset References",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["data table", "soft reference", "hard reference", "assets"]
   }
 ]

@@ -1,0 +1,50 @@
+[
+  {
+    "question": "How would you approach changing seasons in a game feature with a high number of tree actors?",
+    "answer": "Use a material parameter collection so one shared value can update the look of all trees. A dynamic material instance per tree is an alternative if you need more control per actor.",
+    "subtopic": "Environment",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["material-parameter-collection", "dynamic-material-instance", "trees", "season-change"]
+  },
+  {
+    "question": "What's the best approach for character interaction with multiple object classes?",
+    "answer": "Use an interface so different object types can share the same interaction contract without tight coupling.",
+    "subtopic": "Interaction",
+    "difficulty": "Beginner",
+    "category": "Scenario based",
+    "tags": ["interface", "interaction", "decoupling", "objects"]
+  },
+  {
+    "question": "How do you trace the bullet so it hits at the widget cross-hair?",
+    "answer": "Trace from the camera forward for a short distance or up to max range, then trace from the gun muzzle toward that point or hit location.",
+    "subtopic": "Weapons",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["tracing", "crosshair", "weapons", "camera"]
+  },
+  {
+    "question": "What are different ways to achieve deformation of a vehicle?",
+    "answer": "You can use Control Rig or bone manipulation through animation blueprints, morph targets, or material world position offset depending on the effect you need.",
+    "subtopic": "Vehicles",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["vehicle", "deformation", "control-rig", "morph-targets"]
+  },
+  {
+    "question": "How would you implement different footstep sounds on different surface types such as metal, wood, concrete, and sand?",
+    "answer": "Assign physical materials to the surfaces, trace from the character while moving, detect the surface type, and switch the footstep sound based on that result.",
+    "subtopic": "Audio",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["footsteps", "physics-material", "surface-type", "audio"]
+  },
+  {
+    "question": "How would you approach spinning collectible creation?",
+    "answer": "A shader using Time with RotateAboutWorldAxisCheap into World Position Offset is efficient. A spinning particle system is a simpler alternative, while a RotatingMovementComponent is the most general but least specialized option.",
+    "subtopic": "Visual Effects",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["shader", "rotation", "collectible", "world-position-offset"]
+  }
+]

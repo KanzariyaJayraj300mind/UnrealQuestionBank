@@ -62,5 +62,29 @@
     "difficulty": "Beginner",
     "category": "Core",
     "tags": ["profiling", "stat unit", "unreal insights", "fps"]
+  },
+  {
+    "question": "What is the purpose of Level Streaming in Unreal Engine, and when would you use it?",
+    "answer": "Level Streaming dynamically loads and unloads levels or sub-levels during runtime. It is useful for dynamic content, optimizing performance, and creating seamless transitions in large worlds.",
+    "subtopic": "Level Streaming",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["level streaming", "streaming levels", "performance", "world streaming"]
+  },
+  {
+    "question": "How would you optimize a particle system for performance?",
+    "answer": "Use culling, reduce spawn counts based on distance, disable non-visible emitters, and watch expensive settings such as spawn rate, update scratchpads, and lifetime.",
+    "subtopic": "VFX Optimization",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["particles", "vfx", "culling", "optimization", "spawn rate"]
+  },
+  {
+    "question": "Can you change the material of an Instanced Static Mesh, and what is the exception for color changes?",
+    "answer": "You usually cannot set unique materials per instance because instancing relies on shared mesh and material data to save resources. For per-instance variation, Unreal supports options like per-instance random or material-driven color variation.",
+    "subtopic": "Instancing",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["instanced static mesh", "material", "instancing", "color variation"]
   }
 ]

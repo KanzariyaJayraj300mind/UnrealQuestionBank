@@ -38,5 +38,13 @@
     "difficulty": "Beginner",
     "category": "Core",
     "tags": ["gamemode", "controller", "gamestate", "playerstate"]
+  },
+  {
+    "question": "What are the different travel types in Unreal Engine?",
+    "answer": "UEngine::Browse performs a hard reset and disconnects before loading a new map. UWorld::ServerTravel loads a new map on the server and sends connected clients with it. APlayerController::ClientTravel can move a client to a specified map or server. Seamless travel preserves actors such as Controller and PlayerState, while non-seamless travel does not carry old data forward.",
+    "subtopic": "Travel",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["travel", "servertravel", "clienttravel", "seamless travel"]
   }
 ]

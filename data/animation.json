@@ -1,0 +1,74 @@
+[
+  {
+    "question": "What is a Blend Space in Unreal Engine?",
+    "answer": "A Blend Space blends multiple animation poses based on input parameters such as speed and direction, which is useful for smooth locomotion transitions.",
+    "subtopic": "Blend Space",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["animation", "blendspace", "locomotion", "blend space"]
+  },
+  {
+    "question": "What is an Animation Montage?",
+    "answer": "An Animation Montage is a container for one or more animations that lets you control playback, sections, branching, and events for actions such as attacks or reloads.",
+    "subtopic": "Montage",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["animation", "montage", "anim montage", "actions"]
+  },
+  {
+    "question": "What is an Anim Notify and when would you use it?",
+    "answer": "An Anim Notify is an event triggered at a specific time in an animation. It is used for things like footstep sounds, spawning effects, or applying damage at the right frame.",
+    "subtopic": "Animation Notifies",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["animation", "anim notify", "notify", "events"]
+  },
+  {
+    "question": "What is the Fast Path in Unreal animation graphs?",
+    "answer": "Fast Path is an optimized evaluation path for animation graph nodes that reduces overhead by allowing direct access to variables without slower dynamic binding when possible.",
+    "subtopic": "Animation Optimization",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["animation", "fast path", "optimization", "anim graph"]
+  },
+  {
+    "question": "What is the purpose of an Animation Blueprint?",
+    "answer": "An Animation Blueprint controls animation logic for a skeletal mesh, including state machines, blends, montages, and animation variables.",
+    "subtopic": "Animation Blueprint",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["animation", "animation blueprint", "anim bp", "state machine"]
+  },
+  {
+    "question": "What is the difference between a State Machine and a Montage?",
+    "answer": "A State Machine is best for continuous animation flow like idle, walk, and run transitions. A Montage is best for triggered actions such as attacks, reloads, or special moves.",
+    "subtopic": "Animation Systems",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["animation", "state machine", "montage", "comparison"]
+  },
+  {
+    "question": "What is a Slot node in animation, and why is it useful?",
+    "answer": "A Slot node lets animation montages play on top of a base pose. It is commonly used to layer upper-body actions such as firing or reloading.",
+    "subtopic": "Animation Blueprint",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["animation", "slot node", "montage", "layering"]
+  },
+  {
+    "question": "What is a Sync Group in Unreal animation?",
+    "answer": "A Sync Group keeps multiple animations aligned in timing so blended animations stay synchronized, which is useful for locomotion and layered animation setups.",
+    "subtopic": "Animation Systems",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["animation", "sync group", "timing", "blend"]
+  },
+  {
+    "question": "How do you improve animation performance in Unreal Engine?",
+    "answer": "Use Fast Path where possible, avoid unnecessary blueprint work in the animation graph, keep graphs simple, reduce expensive per-frame updates, and use efficient blend and slot setups.",
+    "subtopic": "Animation Optimization",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["animation", "performance", "fast path", "optimization"]
+  }
+]
