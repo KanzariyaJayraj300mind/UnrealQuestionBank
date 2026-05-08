@@ -273,7 +273,7 @@
     "id": "uq-031",
     "question": "How would you approach changing seasons in a game feature with a high number of tree actors?",
     "answer": "The best approach is a material parameter collection. An alternative is a dynamic material instance assigned to each tree so one shared value can update the look of all trees.",
-    "subtopic": "Scenario based",
+    "subtopic": "Optimization",
     "difficulty": "Intermediate",
     "category": "Scenario based",
     "tags": ["material-parameter-collection", "dynamic-material-instance", "trees", "season-change"]
@@ -282,7 +282,7 @@
     "id": "uq-032",
     "question": "What's the best approach for character interaction with multiple object classes?",
     "answer": "Use an interface class so different object types can share the same interaction contract without tight coupling.",
-    "subtopic": "Scenario based",
+    "subtopic": "Unreal Classes",
     "difficulty": "Beginner",
     "category": "Scenario based",
     "tags": ["interface", "interaction", "decoupling", "objects"]
@@ -291,7 +291,7 @@
     "id": "uq-033",
     "question": "Gun: how do you trace the bullet so it hits at the widget cross-hair?",
     "answer": "Trace from the camera forward for a few meters or up to max range, then trace from the gun muzzle toward that point or hit location.",
-    "subtopic": "Scenario based",
+    "subtopic": "Unreal Classes",
     "difficulty": "Intermediate",
     "category": "Scenario based",
     "tags": ["tracing", "crosshair", "weapons", "camera"]
@@ -300,7 +300,7 @@
     "id": "uq-034",
     "question": "Different ways to achieve deformation of a vehicle.",
     "answer": "You can use control rig or bone manipulation through animation blueprints, morph targets, or material world position offset depending on the effect you need.",
-    "subtopic": "Scenario based",
+    "subtopic": "Unreal Classes",
     "difficulty": "Intermediate",
     "category": "Scenario based",
     "tags": ["vehicle", "deformation", "control-rig", "morph-targets"]
@@ -309,7 +309,7 @@
     "id": "uq-035",
     "question": "How would you implement different footstep sounds on different surface types such as metal, wood, concrete, and sand?",
     "answer": "Assign physical materials to the surfaces, trace from the character while moving, detect the surface type, and switch the footstep sound based on that result.",
-    "subtopic": "Scenario based",
+    "subtopic": "Unreal Classes",
     "difficulty": "Intermediate",
     "category": "Scenario based",
     "tags": ["footsteps", "physics-material", "surface-type", "audio"]
@@ -318,7 +318,7 @@
     "id": "uq-036",
     "question": "How would you approach spinning collectible creation?",
     "answer": "The best approach is a shader using Time with RotateAboutWorldAxisCheap into World Position Offset. A simpler alternative is a spinning particle system, while a RotatingMovementComponent is the most general but least specialized option.",
-    "subtopic": "Scenario based",
+    "subtopic": "Optimization",
     "difficulty": "Intermediate",
     "category": "Scenario based",
     "tags": ["shader", "rotation", "collectible", "world-position-offset"]

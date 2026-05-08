@@ -8,6 +8,7 @@ const state = {
 };
 
 let questions = [];
+const excludedSubtopics = new Set(["Scenario based"]);
 
 const elements = {
   questionCount: document.getElementById("questionCount"),
@@ -41,7 +42,10 @@ function buildChip(label, value, type, active) {
 
 function renderFilterGroups() {
   const difficulties = ["All", ...new Set(questions.map((item) => item.difficulty))];
-  const subtopics = ["All", ...new Set(questions.map((item) => item.subtopic))];
+  const subtopics = [
+    "All",
+    ...new Set(questions.map((item) => item.subtopic)).filter((subtopic) => !excludedSubtopics.has(subtopic)),
+  ];
   const categories = ["All", ...new Set(questions.map((item) => item.category))];
   const tags = [...new Set(questions.flatMap((item) => item.tags))].sort((a, b) =>
     a.localeCompare(b),
@@ -182,33 +186,14 @@ function renderQuestions() {
       const card = elements.questionTemplate.content.firstElementChild.cloneNode(true);
       const title = card.querySelector(".question-title");
       const answer = card.querySelector(".question-answer");
-      const topicBadge = card.querySelector(".badge-topic");
       const categoryBadge = card.querySelector(".badge-category");
       const difficultyBadge = card.querySelector(".badge-difficulty");
-      const tagRow = card.querySelector(".tag-row");
       const toggle = card.querySelector(".answer-toggle");
 
       title.textContent = question.question;
       answer.textContent = question.answer;
-      topicBadge.textContent = question.subtopic;
       categoryBadge.textContent = question.category;
       difficultyBadge.textContent = question.difficulty;
-
-      question.tags.forEach((tag) => {
-        const chip = document.createElement("button");
-        chip.type = "button";
-        chip.className = "tag-chip";
-        chip.textContent = `#${tag}`;
-        chip.addEventListener("click", () => {
-          if (state.tags.has(tag)) {
-            state.tags.delete(tag);
-          } else {
-            state.tags.add(tag);
-          }
-          update();
-        });
-        tagRow.appendChild(chip);
-      });
 
       let expanded = index < 2;
       answer.classList.toggle("is-hidden", !expanded);
@@ -302,6 +287,7 @@ function bindControls() {
       if (type === "difficulty") {
         state.difficulty = state.difficulty === value ? "All" : value;
       } else if (type === "subtopic") {
+        if (excludedSubtopics.has(value)) return;
         state.subtopic = state.subtopic === value ? "All" : value;
       } else if (type === "category") {
         state.category = state.category === value ? "All" : value;
