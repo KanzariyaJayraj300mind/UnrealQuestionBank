@@ -217,5 +217,19 @@
       "materials",
       "performance"
     ]
+  },
+  {
+    "question": "How would you implement a jump onto objects at different heights using the same animation?",
+    "answer": "Use one jump animation and adapt it at runtime with Motion Warping or root motion adjustments so the character reaches the actual target height and landing position instead of needing separate animations for every height.",
+    "subtopic": "animations",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": [
+      "jump",
+      "motion warping",
+      "root motion",
+      "animation",
+      "height"
+    ]
   }
 ]

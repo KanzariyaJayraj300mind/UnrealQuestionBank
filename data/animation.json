@@ -141,5 +141,46 @@
       "blend",
       "upper body"
     ]
+  },
+  {
+    "question": "What is Motion Warping in Unreal Engine?",
+    "answer": "Motion Warping adjusts an animation at runtime so actions like attacks or jumps line up correctly with a dynamic target location or actor.",
+    "subtopic": "animations",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "animation",
+      "motion warping",
+      "runtime adjustment",
+      "root motion"
+    ]
+  },
+  {
+    "question": "When would you use Motion Warping instead of plain root motion?",
+    "answer": "Use Motion Warping when the animation must adapt to a changing target, such as a melee attack that needs to hit an enemy at different distances, while plain root motion is better when the motion path is fixed and authored exactly as played.",
+    "subtopic": "animations",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": [
+      "animation",
+      "motion warping",
+      "root motion",
+      "combat",
+      "adaptation"
+    ]
+  },
+  {
+    "question": "What problem does Motion Warping solve in gameplay animation?",
+    "answer": "Motion Warping prevents animations from missing their target when the distance or orientation changes at runtime by retargeting the motion to the actual gameplay situation.",
+    "subtopic": "animations",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": [
+      "animation",
+      "motion warping",
+      "gameplay",
+      "alignment",
+      "root motion"
+    ]
   }
 ]
