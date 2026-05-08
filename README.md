@@ -30,7 +30,7 @@ Each item follows this shape:
 
 ## Run locally
 
-Open `index.html` through any static web server.
+Open `index.html` through any static web server or GitHub Pages.
 
 Example:
 
@@ -47,6 +47,7 @@ This repo is already set up to work on GitHub Pages as a static site:
 - `index.html` is at the repository root
 - asset paths are relative, so they work under a project subpath
 - `.nojekyll` is included to prevent GitHub Pages from applying Jekyll processing
+- question data is loaded from `data/questions.json` at runtime
 
 To publish it:
 
