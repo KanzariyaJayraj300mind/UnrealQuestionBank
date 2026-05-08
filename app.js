@@ -29,6 +29,8 @@ const elements = {
   questionTemplate: document.getElementById("questionTemplate"),
 };
 
+const dataManifestUrl = new URL("./data/questions-manifest.json", window.location.href);
+
 function buildChip(label, value, type, active) {
   const button = document.createElement("button");
   button.type = "button";
@@ -231,12 +233,35 @@ function syncFilterDrawer() {
 }
 
 async function loadQuestions() {
-  const response = await fetch("./data/questions.json", { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(`Failed to load question data: ${response.status}`);
+  const manifestResponse = await fetch(dataManifestUrl, { cache: "no-store" });
+  if (!manifestResponse.ok) {
+    throw new Error(`Failed to load question manifest: ${manifestResponse.status}`);
   }
 
-  return response.json();
+  const manifest = await manifestResponse.json();
+  if (!Array.isArray(manifest.files) || manifest.files.length === 0) {
+    throw new Error("Question manifest does not contain any files.");
+  }
+
+  const fileUrls = manifest.files.map((file) => new URL(`./data/${file}`, window.location.href));
+  const responses = await Promise.all(fileUrls.map((url) => fetch(url, { cache: "no-store" })));
+  const loadedDatasets = [];
+
+  responses.forEach((response, index) => {
+    if (response.ok) {
+      loadedDatasets.push(response.json());
+      return;
+    }
+
+    console.warn(`Skipping question file ${manifest.files[index]}: ${response.status}`);
+  });
+
+  if (loadedDatasets.length === 0) {
+    throw new Error("No question files could be loaded from the manifest.");
+  }
+
+  const datasets = await Promise.all(loadedDatasets);
+  return datasets.flat();
 }
 
 function bindControls() {
@@ -317,7 +342,7 @@ async function boot() {
   } catch (error) {
     console.error(error);
     elements.resultsMeta.textContent =
-      "Could not load data. Run the site through a static server and make sure data/questions.json exists.";
+      "Could not load data. Run the site through a static server and make sure at least one file in data/questions-manifest.json exists.";
     elements.questionList.innerHTML =
       '<div class="empty-state">Unable to load question data. Open the site through a local static server.</div>';
   }

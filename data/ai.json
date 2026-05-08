@@ -1,0 +1,26 @@
+[
+  {
+    "question": "How does AI work in Unreal? Explain Blackboard, Behavior Tree, Perception, and EQS.",
+    "answer": "Blackboard stores AI memory, behavior trees control decision making, AIController passes input to the pawn, perception handles sensing, and EQS helps the AI choose good locations or targets.",
+    "subtopic": "AI Systems",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["ai", "blackboard", "behavior tree", "perception", "eqs"]
+  },
+  {
+    "question": "What are AI perception sense classes in Unreal Engine?",
+    "answer": "Common perception senses include Sight, Hearing, Damage, Touch, and Prediction.",
+    "subtopic": "AI Perception",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["ai", "perception", "sight", "hearing", "damage", "touch"]
+  },
+  {
+    "question": "What is the default execution direction of a behavior tree, and how do Selector and Sequence work?",
+    "answer": "Behavior trees run from left to right. A Selector checks children left to right until one succeeds, then returns success. A Sequence checks children left to right until one fails, then returns failure.",
+    "subtopic": "Behavior Tree",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["ai", "behavior tree", "selector", "sequence"]
+  }
+]

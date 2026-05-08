@@ -1,0 +1,66 @@
+[
+  {
+    "question": "Function Override & Overload",
+    "answer": "Override redefines a base class method in a derived class. Overload uses the same function name with different parameters.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["override", "overload", "polymorphism", "functions"]
+  },
+  {
+    "question": "Pass by Value, Pass by Reference",
+    "answer": "Pass by value copies data. Pass by reference shares the original value, avoids a copy, and can modify the caller's data.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["value", "reference", "copy", "parameters"]
+  },
+  {
+    "question": "Virtual vs. Pure Virtual",
+    "answer": "A virtual function can have a definition and be optionally overridden. A pure virtual function must be overridden in derived classes.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["virtual", "pure virtual", "abstract class", "inheritance"]
+  },
+  {
+    "question": "Dereferencing Pointer",
+    "answer": "The `*` operator accesses the value stored at the memory address held by the pointer.",
+    "subtopic": "Pointers",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["pointer", "dereference", "memory", "c++"]
+  },
+  {
+    "question": "Arrow Operator",
+    "answer": "The `->` operator accesses a member of a struct or class through a pointer.",
+    "subtopic": "Pointers",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["pointer", "arrow operator", "member access", "c++"]
+  },
+  {
+    "question": "Pass by Pointer",
+    "answer": "Using `Type* Ptr` passes the address of a value so the function can work with the original object indirectly.",
+    "subtopic": "Pointers",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["pointer", "parameters", "address", "c++"]
+  },
+  {
+    "question": "Pass by Reference",
+    "answer": "Using `Type& Ref` passes an alias to the original object, so no pointer syntax is needed.",
+    "subtopic": "Pointers",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["reference", "parameters", "alias", "c++"]
+  },
+  {
+    "question": "Get Address of Variable",
+    "answer": "The `&` operator returns the memory address of a variable as a pointer.",
+    "subtopic": "Pointers",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["address", "pointer", "memory", "c++"]
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "question": "What are delegates, and how do you use them in Unreal Engine for event handling?",
+    "answer": "Delegates are callback objects used for event handling. You declare the delegate, bind a function to it, and then call it when the event happens.",
+    "subtopic": "Delegates",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["delegates", "events", "binding", "callbacks"]
+  },
+  {
+    "question": "What are subsystems and what are their benefits?",
+    "answer": "Subsystems are a way to implement singleton-like classes in Unreal. Their lifecycle matches the GameInstance, and they can be accessed from anywhere that has access to the owning context.",
+    "subtopic": "Subsystems",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["subsystems", "singleton", "game instance", "lifecycle"]
+  },
+  {
+    "question": "What is the purpose of the GameMode, GameState, and PlayerController classes in Unreal Engine?",
+    "answer": "GameMode defines the rules of the game and exists only on the server. GameState stores replicated game-wide state for all clients. PlayerController handles player input and player-specific control logic.",
+    "subtopic": "Gameplay Framework",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["gamemode", "gamestate", "playercontroller", "framework"]
+  },
+  {
+    "question": "What is the difference between BlueprintImplementableEvent and BlueprintNativeEvent?",
+    "answer": "BlueprintImplementableEvent must be implemented in Blueprint. BlueprintNativeEvent can have a default C++ implementation and can also be overridden in Blueprint.",
+    "subtopic": "Blueprints",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["blueprintimplementableevent", "blueprintnativeevent", "blueprints", "c++"]
+  },
+  {
+    "question": "What is the difference between SpawnActor and Deferred Spawn?",
+    "answer": "SpawnActor creates and initializes the actor immediately. Deferred Spawn allows custom setup before calling FinishSpawningActor.",
+    "subtopic": "Actors",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["spawnactor", "deferred spawn", "actors", "spawning"]
+  },
+  {
+    "question": "Can you make an array of arrays in Unreal?",
+    "answer": "Not directly as a plain nested array in most cases. A common approach is to create a struct that contains an array, then make an array of that struct.",
+    "subtopic": "Containers",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["array", "struct", "containers", "blueprint"]
+  },
+  {
+    "question": "What are common UFUNCTION specifiers?",
+    "answer": "Common UFUNCTION specifiers include BlueprintCallable, BlueprintPure, BlueprintImplementableEvent, and BlueprintNativeEvent.",
+    "subtopic": "UFUNCTION",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["ufunction", "blueprintcallable", "blueprintpure", "specifiers"]
+  },
+  {
+    "question": "What are common UPROPERTY specifiers?",
+    "answer": "Common UPROPERTY specifiers include BlueprintReadWrite, BlueprintReadOnly, EditAnywhere, EditDefaultsOnly, EditInstanceOnly, VisibleAnywhere, VisibleDefaultsOnly, and VisibleInstanceOnly.",
+    "subtopic": "UPROPERTY",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["uproperty", "specifiers", "blueprintreadonly", "editanywhere"]
+  },
+  {
+    "question": "If you have a common function that is needed in multiple classes, where should you put it?",
+    "answer": "A Blueprint Function Library or Macro Library is usually the right place for shared utility logic.",
+    "subtopic": "Blueprints",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["function library", "macro library", "blueprint", "shared logic"]
+  },
+  {
+    "question": "Can you use Delay in a function?",
+    "answer": "No, Delay cannot be used in a normal function. It can be used in macros or event graphs where latent actions are supported.",
+    "subtopic": "Blueprints",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["delay", "latent action", "functions", "macros"]
+  },
+  {
+    "question": "What is Sweep in SetActorLocation()?",
+    "answer": "Sweep is a boolean flag that checks for collision along the movement path when moving the actor.",
+    "subtopic": "Actors",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["sweep", "setactorlocation", "collision", "movement"]
+  },
+  {
+    "question": "What information does Hit Result contain?",
+    "answer": "Hit Result can include the actor hit, component hit, bone name, impact point, impact normal, location, blocking hit flag, start penetrating flag, distance, face index, and physical material.",
+    "subtopic": "Collision",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["hit result", "collision", "trace", "impact point"]
+  },
+  {
+    "question": "In a shooting game, Player shoots Barrel A, Barrel A explodes and triggers Barrel B, and Barrel B explodes and kills an enemy. Who is the Damage Instigator and who is the Damage Causer?",
+    "answer": "Damage Instigator: Barrel B. Damage Causer: the player. The instigator is the actor that directly caused the final damage event, while the causer is the original source of the chain.",
+    "subtopic": "Damage System",
+    "difficulty": "Beginner",
+    "category": "Scenario based",
+    "tags": ["damage", "instigator", "causer", "scenario", "multiplayer"]
+  }
+]

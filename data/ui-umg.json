@@ -1,0 +1,74 @@
+[
+  {
+    "question": "What is a Named Slot in UMG?",
+    "answer": "A Named Slot is a placeholder in a widget that lets you inject custom child content from the parent or from another widget instance.",
+    "subtopic": "Widgets",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["umg", "named slot", "widgets", "layout"]
+  },
+  {
+    "question": "What is data binding in UMG?",
+    "answer": "Data binding connects widget properties to data sources so the UI updates automatically when the underlying data changes.",
+    "subtopic": "Data Binding",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["umg", "binding", "data", "ui"]
+  },
+  {
+    "question": "What are the performance concerns of UMG data binding?",
+    "answer": "Binding can be expensive if it runs frequently across many widgets. Prefer event-driven updates or cached values when possible instead of constant polling.",
+    "subtopic": "UI Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["umg", "binding", "optimization", "performance"]
+  },
+  {
+    "question": "How do you bind a widget in C++?",
+    "answer": "You typically expose the widget with UPROPERTY(meta = (BindWidget)) in the widget class and let Unreal bind it from the UMG designer by name.",
+    "subtopic": "C++ and UMG",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["c++", "bindwidget", "umg", "widget binding"]
+  },
+  {
+    "question": "What is an Invalidation Box in UMG?",
+    "answer": "An Invalidation Box caches widget rendering so unchanged UI does not need to be rebuilt every frame, which improves performance.",
+    "subtopic": "UI Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["invalidations", "ui", "performance", "umg"]
+  },
+  {
+    "question": "When should you use an Invalidation Box?",
+    "answer": "Use it around UI that changes infrequently but is expensive to render, such as static menus or panels with lots of nested widgets.",
+    "subtopic": "UI Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["invalidations", "caching", "menus", "optimization"]
+  },
+  {
+    "question": "What is the difference between a Canvas Panel and an Overlay in UMG?",
+    "answer": "A Canvas Panel gives absolute positioning and anchors, while an Overlay stacks widgets on top of each other in order.",
+    "subtopic": "Widgets",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["canvas panel", "overlay", "layout", "umg"]
+  },
+  {
+    "question": "What is the purpose of a Widget Blueprint?",
+    "answer": "A Widget Blueprint is the visual UMG asset used to design UI layouts and connect them to logic in Blueprint or C++.",
+    "subtopic": "Widgets",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["widget blueprint", "umg", "ui", "blueprint"]
+  },
+  {
+    "question": "How do you improve UI performance in Unreal Engine?",
+    "answer": "Reduce expensive bindings, update UI only when values change, use invalidation boxes for static sections, avoid unnecessary nested widgets, and cache references to widget elements in C++ when possible.",
+    "subtopic": "UI Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["ui", "performance", "umg", "optimization"]
+  }
+]

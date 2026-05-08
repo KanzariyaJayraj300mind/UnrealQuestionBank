@@ -1,0 +1,66 @@
+[
+  {
+    "question": "How would you optimize the performance of a scene in Unreal Engine?",
+    "answer": "Use art-side optimizations like LODs, distance/frustum/occlusion culling, instanced static meshes, hierarchical instanced static meshes, and mip maps. On the code side, reduce tick frequency and use object pooling where possible.",
+    "subtopic": "Scene Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["optimization", "lod", "culling", "instancing", "mip maps", "tick", "pooling"]
+  },
+  {
+    "question": "What is the purpose of LOD in Unreal Engine?",
+    "answer": "LOD reduces rendering cost by using simpler mesh versions as the camera moves farther away from an object.",
+    "subtopic": "Rendering Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["lod", "mesh", "rendering", "optimization"]
+  },
+  {
+    "question": "What types of culling are commonly used to improve performance?",
+    "answer": "Distance culling removes objects beyond a certain range, frustum culling skips objects outside the camera view, and occlusion culling skips objects blocked by other geometry.",
+    "subtopic": "Rendering Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["culling", "distance", "frustum", "occlusion"]
+  },
+  {
+    "question": "Why are Instanced Static Meshes and Hierarchical Instanced Static Meshes useful?",
+    "answer": "They reduce draw calls by rendering many copies of the same mesh more efficiently, which is useful for objects like grass, trees, or repeated props.",
+    "subtopic": "Rendering Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["instanced static mesh", "hierarchical instanced static mesh", "draw calls", "rendering"]
+  },
+  {
+    "question": "How do mip maps help performance and visual quality?",
+    "answer": "Mip maps are precomputed lower-resolution texture versions that reduce aliasing and improve sampling performance when textures are far from the camera.",
+    "subtopic": "Texture Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["mip maps", "textures", "aliasing", "sampling"]
+  },
+  {
+    "question": "How can you optimize tick performance in Unreal Engine?",
+    "answer": "Reduce tick rate, disable tick when it is not needed, and move logic to timers or event-driven updates when possible.",
+    "subtopic": "Code Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["tick", "performance", "timers", "optimization"]
+  },
+  {
+    "question": "What is object pooling and why is it useful?",
+    "answer": "Object pooling reuses existing actors or objects instead of spawning and destroying them repeatedly, which reduces allocation overhead and runtime spikes.",
+    "subtopic": "Code Optimization",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["object pooling", "memory", "spawning", "optimization"]
+  },
+  {
+    "question": "How do you profile performance in Unreal Engine?",
+    "answer": "Use profiling tools and stats such as Stat Unit, Stat FPS, Stat Game, and Unreal Insights to find bottlenecks in rendering, game thread work, and asset usage.",
+    "subtopic": "Profiling",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["profiling", "stat unit", "unreal insights", "fps"]
+  }
+]

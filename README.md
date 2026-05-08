@@ -13,12 +13,12 @@ Static, mobile-friendly question bank for Unreal Engine interview prep.
 ## Easy data updates
 
 Edit [`data/questions.json`](./data/questions.json) to add, remove, or update questions.
+If you add more question JSON files under `data/`, list them in [`data/questions-manifest.json`](./data/questions-manifest.json).
 
 Each item follows this shape:
 
 ```json
 {
-  id: "ue-001",
   question: "Question text",
   answer: "Short reference answer",
   subtopic: "Gameplay Framework",
@@ -47,6 +47,7 @@ This repo is already set up to work on GitHub Pages as a static site:
 - `index.html` is at the repository root
 - asset paths are relative, so they work under a project subpath
 - `.nojekyll` is included to prevent GitHub Pages from applying Jekyll processing
+- question data is loaded from the JSON files listed in `data/questions-manifest.json`
 
 To publish it:
 
