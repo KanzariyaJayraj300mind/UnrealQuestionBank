@@ -18,7 +18,6 @@ Each item follows this shape:
 
 ```json
 {
-  id: "ue-001",
   question: "Question text",
   answer: "Short reference answer",
   subtopic: "Gameplay Framework",
