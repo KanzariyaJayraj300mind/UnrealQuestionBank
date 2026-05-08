@@ -1,3 +1,5 @@
+import questions from "./data/questions.js";
+
 const state = {
   search: "",
   difficulty: "All",
@@ -7,7 +9,6 @@ const state = {
   filterDrawerOpen: false,
 };
 
-let questions = [];
 const excludedSubtopics = new Set(["Scenario based"]);
 
 const elements = {
@@ -235,15 +236,6 @@ function syncFilterDrawer() {
   elements.filterDrawer.setAttribute("aria-hidden", String(!isOpen));
 }
 
-async function loadQuestions() {
-  const response = await fetch("./data/questions.json", { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(`Failed to load question data: ${response.status}`);
-  }
-
-  return response.json();
-}
-
 function bindControls() {
   state.filterDrawerOpen = false;
 
@@ -312,21 +304,10 @@ function bindControls() {
 }
 
 async function boot() {
-  elements.resultsMeta.textContent = "Loading question bank...";
-
-  try {
-    questions = await loadQuestions();
-    renderFilterGroups();
-    bindControls();
-    syncFilterDrawer();
-    update();
-  } catch (error) {
-    console.error(error);
-    elements.resultsMeta.textContent =
-      "Could not load data. Run the site through a static server and make sure data/questions.json exists.";
-    elements.questionList.innerHTML =
-      '<div class="empty-state">Unable to load question data. Open the site through a local static server.</div>';
-  }
+  renderFilterGroups();
+  bindControls();
+  syncFilterDrawer();
+  update();
 }
 
 boot();
