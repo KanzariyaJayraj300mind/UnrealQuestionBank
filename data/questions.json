@@ -1,164 +1,326 @@
 [
   {
-    "id": "ue-001",
-    "question": "What is the difference between a Pawn and a Character in Unreal Engine?",
-    "answer": "A Character is a specialized Pawn that includes a CharacterMovementComponent, a capsule collision, and common movement behavior. A Pawn is a more general controllable actor.",
-    "subtopic": "Gameplay Framework",
+    "id": "uq-001",
+    "question": "Class & Structure Difference",
+    "answer": "Classes support OOP features like inheritance and member functions, while structs are lighter weight and default to public members in C++.",
+    "subtopic": "OOPS",
     "difficulty": "Beginner",
-    "category": "Theoretical",
-    "tags": ["pawn", "character", "movement", "framework"]
+    "category": "Core",
+    "tags": ["classes", "structs", "c++", "oop"]
   },
   {
-    "id": "ue-002",
-    "question": "When would you use a GameMode versus a GameState?",
-    "answer": "GameMode defines the rules for a match on the server, while GameState holds replicated match state that clients can read.",
-    "subtopic": "Gameplay Framework",
+    "id": "uq-002",
+    "question": "Function Override & Overload",
+    "answer": "Override redefines a virtual base class function in a derived class. Overload uses the same function name with different parameters.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["override", "overload", "polymorphism", "functions"]
+  },
+  {
+    "id": "uq-003",
+    "question": "Pass by Value, Pass by Reference",
+    "answer": "Pass by value copies the data. Pass by reference shares the original value, avoids a copy, and lets the function modify the caller's data.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["value", "reference", "copy", "parameters"]
+  },
+  {
+    "id": "uq-004",
+    "question": "Virtual vs. Pure Virtual",
+    "answer": "A virtual function can have a definition. A pure virtual function must be overridden in derived classes and makes the class abstract.",
+    "subtopic": "OOPS",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["virtual", "pure-virtual", "abstraction", "polymorphism"]
+  },
+  {
+    "id": "uq-005",
+    "question": "Dereferencing Pointer",
+    "answer": "Use `*Ptr` to access the value stored at the memory address pointed to by the pointer.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["pointer", "dereference", "memory", "c++"]
+  },
+  {
+    "id": "uq-006",
+    "question": "Arrow Operator",
+    "answer": "Use `Ptr->Member` to access a member on an object through a pointer.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["pointer", "member-access", "arrow-operator", "c++"]
+  },
+  {
+    "id": "uq-007",
+    "question": "Pass by Pointer",
+    "answer": "Passing `Func(Type* Ptr)` sends the address of the object. It can be null and is useful when you want pointer semantics.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["pointer", "function-parameters", "address", "c++"]
+  },
+  {
+    "id": "uq-008",
+    "question": "Pass by Reference",
+    "answer": "Passing `Func(Type& Ref)` sends an alias to the original object. It avoids copies and cannot be null like a pointer.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["reference", "function-parameters", "alias", "c++"]
+  },
+  {
+    "id": "uq-009",
+    "question": "Get Address of Variable",
+    "answer": "Use `&Var` to get the address of a variable so you can store or pass it as a pointer.",
+    "subtopic": "OOPS",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["address-of", "pointer", "memory", "c++"]
+  },
+  {
+    "id": "uq-010",
+    "question": "For replication, how many types of replications are there? Give a scenario for each.",
+    "answer": "RepNotify is useful when clients need a reaction to a variable change, like opening a chest. Replicated variables are for continuous state such as speed. Multicast is for one-shot events that should run on all clients once, like setting a name or playing an effect.",
+    "subtopic": "Multiplayer",
     "difficulty": "Intermediate",
     "category": "Theoretical",
-    "tags": ["gamemode", "gamestate", "multiplayer", "replication"]
+    "tags": ["replication", "repnotify", "multicast", "variables"]
   },
   {
-    "id": "ue-003",
-    "question": "What is the purpose of a PlayerController?",
-    "answer": "PlayerController acts as the bridge between the player's input and the Pawn or UI they control. It persists across Pawn possession changes.",
-    "subtopic": "Gameplay Framework",
-    "difficulty": "Beginner",
+    "id": "uq-011",
+    "question": "Explain RPC in Unreal Engine. Give types of RPC.",
+    "answer": "RPCs are remote function calls used to execute logic on another network instance. Run on Server executes on the server, Run on Owning Client executes on the owning client, and NetMulticast executes on all relevant instances.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
     "category": "Theoretical",
-    "tags": ["input", "controller", "possession", "ui"]
+    "tags": ["rpc", "server", "client", "network"]
   },
   {
-    "id": "ue-004",
-    "question": "How does replication work in Unreal Engine?",
-    "answer": "Replication sends server-authoritative property and function state to clients over the network using replicated variables, RPCs, and relevancy rules.",
-    "subtopic": "Networking",
+    "id": "uq-012",
+    "question": "How can you prevent common cheating in multiplayer?",
+    "answer": "Keep critical logic on the server, validate client requests before execution, and clamp or reject values that fall outside allowed limits.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["cheating", "validation", "server-authority", "multiplayer"]
+  },
+  {
+    "id": "uq-013",
+    "question": "Explain client-side prediction and server-side correction.",
+    "answer": "Client-side prediction simulates the result immediately for responsiveness. Server-side correction compares that result with the authoritative server state and corrects mismatches.",
+    "subtopic": "Multiplayer",
     "difficulty": "Advanced",
     "category": "Theoretical",
-    "tags": ["replication", "rpc", "server", "multiplayer"]
+    "tags": ["prediction", "correction", "networking", "multiplayer"]
   },
   {
-    "id": "ue-005",
-    "question": "What is an RPC and when should you use one?",
-    "answer": "An RPC is a remote function call used to execute logic on the server or clients. Use it for time-sensitive or authority-based gameplay events that should not be handled by replicated state alone.",
-    "subtopic": "Networking",
-    "difficulty": "Intermediate",
-    "category": "Scenario based",
-    "tags": ["rpc", "server", "client", "authority"]
-  },
-  {
-    "id": "ue-006",
-    "question": "What is the difference between Tick and timers?",
-    "answer": "Tick runs every frame and is useful for continuous updates. Timers are better for scheduled or repeated work because they reduce per-frame overhead and are easier to control.",
-    "subtopic": "Performance",
-    "difficulty": "Beginner",
-    "category": "Core",
-    "tags": ["tick", "timer", "optimization", "performance"]
-  },
-  {
-    "id": "ue-007",
-    "question": "What causes garbage collection pressure in Unreal Engine?",
-    "answer": "Untracked UObject references, frequent object creation, and unmanaged lifetime patterns can increase GC work. Proper UPROPERTY references and object pooling help reduce pressure.",
-    "subtopic": "Performance",
-    "difficulty": "Advanced",
-    "category": "Core",
-    "tags": ["garbage-collection", "uobject", "memory", "performance"]
-  },
-  {
-    "id": "ue-008",
-    "question": "How do Blueprint Interfaces help in gameplay code?",
-    "answer": "Blueprint Interfaces define a contract between unrelated objects so they can communicate without hard references, which helps reduce coupling.",
-    "subtopic": "Blueprints",
+    "id": "uq-014",
+    "question": "Which class stays where: server or client?",
+    "answer": "GameMode exists only on the server. Controller exists on both, with the server authoritative copy and local client copy. GameState and PlayerState exist on both and replicate from the server.",
+    "subtopic": "Multiplayer",
     "difficulty": "Intermediate",
     "category": "Theoretical",
-    "tags": ["blueprint", "interface", "decoupling", "communication"]
+    "tags": ["gamemode", "gamestate", "controller", "playerstate"]
   },
   {
-    "id": "ue-009",
-    "question": "What is the difference between a Blueprint Macro and a Function?",
-    "answer": "A Function is a reusable unit with execution flow and local scope. A Macro expands inline and is useful for repeated control flow, but it can be harder to debug.",
-    "subtopic": "Blueprints",
-    "difficulty": "Intermediate",
-    "category": "Core",
-    "tags": ["blueprint", "macro", "function", "logic"]
-  },
-  {
-    "id": "ue-010",
-    "question": "What is the role of UPROPERTY in Unreal C++?",
-    "answer": "UPROPERTY exposes members to reflection, serialization, garbage collection, and editor integration depending on the specifiers you choose.",
-    "subtopic": "C++",
-    "difficulty": "Beginner",
-    "category": "Core",
-    "tags": ["c++", "reflection", "serialization", "uproperty"]
-  },
-  {
-    "id": "ue-011",
-    "question": "Why is TWeakObjectPtr useful?",
-    "answer": "TWeakObjectPtr lets you reference UObjects without preventing garbage collection. It is useful when you need a non-owning pointer that can safely expire.",
-    "subtopic": "C++",
-    "difficulty": "Intermediate",
-    "category": "Core",
-    "tags": ["c++", "memory", "pointer", "uobject"]
-  },
-  {
-    "id": "ue-012",
-    "question": "How does the Unreal rendering pipeline use materials and shaders?",
-    "answer": "Materials define the graph and parameters for surface behavior, while shaders are the compiled programs that execute on the GPU to render that material.",
-    "subtopic": "Rendering",
-    "difficulty": "Intermediate",
-    "category": "Theoretical",
-    "tags": ["rendering", "material", "shader", "gpu"]
-  },
-  {
-    "id": "ue-013",
-    "question": "What is Lumen used for?",
-    "answer": "Lumen is Unreal Engine's dynamic global illumination and reflections system for real-time lighting workflows.",
-    "subtopic": "Rendering",
-    "difficulty": "Beginner",
-    "category": "Theoretical",
-    "tags": ["rendering", "lumen", "lighting", "reflections"]
-  },
-  {
-    "id": "ue-014",
-    "question": "How do Animation Blueprints fit into character animation?",
-    "answer": "Animation Blueprints drive skeletal mesh animation logic through state machines, blend spaces, and pose graphs.",
-    "subtopic": "Animation",
-    "difficulty": "Intermediate",
-    "category": "Theoretical",
-    "tags": ["animation", "animblueprint", "state-machine", "blend-space"]
-  },
-  {
-    "id": "ue-015",
-    "question": "What is a State Machine in animation systems?",
-    "answer": "A State Machine controls transitions between animation states like idle, walk, run, or jump using defined rules.",
-    "subtopic": "Animation",
-    "difficulty": "Beginner",
-    "category": "Theoretical",
-    "tags": ["animation", "state-machine", "transitions", "movement"]
-  },
-  {
-    "id": "ue-016",
-    "question": "What is an AI Behavior Tree used for?",
-    "answer": "Behavior Trees structure AI decision-making by combining tasks, decorators, and services in a modular flow.",
+    "id": "uq-015",
+    "question": "How AI works in Unreal? Blackboard, Behavior Tree, Perception, EQS",
+    "answer": "The AIController drives the pawn. Blackboard stores state, Behavior Tree decides actions, Perception senses the world, and EQS helps query the best target or location.",
     "subtopic": "AI",
     "difficulty": "Intermediate",
-    "category": "Scenario based",
-    "tags": ["ai", "behavior-tree", "decorator", "decision-making"]
+    "category": "Theoretical",
+    "tags": ["ai", "blackboard", "behavior-tree", "eqs"]
   },
   {
-    "id": "ue-017",
-    "question": "When should you use Soft References in Unreal Engine?",
-    "answer": "Use soft references when you want to reference assets without forcing them to load immediately, which helps manage memory and load times.",
-    "subtopic": "Asset Management",
-    "difficulty": "Intermediate",
-    "category": "Scenario based",
-    "tags": ["assets", "soft-reference", "memory", "loading"]
+    "id": "uq-016",
+    "question": "AI Perception sense classes in UE?",
+    "answer": "The common senses are Sight, Hearing, Damage, Touch, and Prediction.",
+    "subtopic": "AI",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["ai-perception", "sight", "hearing", "senses"]
   },
   {
-    "id": "ue-018",
-    "question": "What is the difference between Primary Data Assets and Data Tables?",
-    "answer": "Primary Data Assets are asset-based objects that work well for structured, extensible game data, while Data Tables are row-based and often easier for spreadsheet-driven content.",
-    "subtopic": "Data",
+    "id": "uq-017",
+    "question": "What is behavior tree default execution direction? Selector vs Sequence",
+    "answer": "Behavior Trees run from left to right. A Selector stops on the first successful node, while a Sequence stops on the first failure.",
+    "subtopic": "AI",
     "difficulty": "Intermediate",
-    "category": "Core",
-    "tags": ["data", "assets", "datatable", "configuration"]
+    "category": "Theoretical",
+    "tags": ["behavior-tree", "selector", "sequence", "ai"]
+  },
+  {
+    "id": "uq-018",
+    "question": "How would you optimize the performance of a scene in Unreal Engine?",
+    "answer": "Use LODs, culling, instanced static meshes, hierarchical instanced static meshes, and mip maps on the art side. On the code side, reduce tick usage, lower tick rates, and use object pooling where possible.",
+    "subtopic": "Optimization",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["optimization", "lod", "culling", "pooling"]
+  },
+  {
+    "id": "uq-019",
+    "question": "What are delegates, and how do you use them in Unreal Engine for event handling?",
+    "answer": "Delegates let you declare a callback, bind functions to it, and call those functions when the event happens.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["delegates", "events", "binding", "event-handling"]
+  },
+  {
+    "id": "uq-020",
+    "question": "What are subsystems? What is the benefit?",
+    "answer": "Subsystems are a singleton-style way to organize game logic. Their lifecycle follows the owning system, like the GameInstance, and they can be accessed from anywhere that has access to that owner.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["subsystems", "singleton", "lifecycle", "architecture"]
+  },
+  {
+    "id": "uq-021",
+    "question": "What is the purpose of the Game Mode, Game State, and Player Controller classes in Unreal Engine?",
+    "answer": "GameMode defines the rules, GameState shares the match state, and PlayerController handles player input and possession logic.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["gamemode", "gamestate", "playercontroller", "framework"]
+  },
+  {
+    "id": "uq-022",
+    "question": "BlueprintImplementableEvent vs BlueprintNativeEvent?",
+    "answer": "BlueprintImplementableEvent must be implemented in Blueprint. BlueprintNativeEvent can have a C++ default implementation and can still be overridden in Blueprint.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["blueprint", "events", "c++", "override"]
+  },
+  {
+    "id": "uq-023",
+    "question": "Difference between SpawnActor and Deferred Spawn?",
+    "answer": "SpawnActor creates and initializes the actor immediately. Deferred Spawn lets you set up data before calling FinishSpawningActor.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["spawning", "actor", "initialization", "c++"]
+  },
+  {
+    "id": "uq-024",
+    "question": "Can we make array of array in Unreal?",
+    "answer": "Not directly in the usual way. A common approach is to use a struct that contains an array, then make an array of that struct.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["array", "struct", "c++", "data-structure"]
+  },
+  {
+    "id": "uq-025",
+    "question": "UFUNCTION Specifiers",
+    "answer": "Common specifiers include BlueprintCallable, BlueprintPure, BlueprintImplementableEvent, and BlueprintNativeEvent.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["ufunction", "specifiers", "blueprint", "c++"]
+  },
+  {
+    "id": "uq-026",
+    "question": "UPROPERTY Specifiers",
+    "answer": "Common specifiers include BlueprintReadWrite, BlueprintReadOnly, EditAnywhere, EditDefaultsOnly, EditInstanceOnly, VisibleAnywhere, VisibleDefaultsOnly, and VisibleInstanceOnly.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["uproperty", "specifiers", "reflection", "editor"]
+  },
+  {
+    "id": "uq-027",
+    "question": "If I have a common function which I need to use in multiple classes, where should I put it?",
+    "answer": "Put shared reusable logic in a Blueprint or Macro Library, or in a utility class if you need a C++ solution.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["utility", "function-library", "reuse", "blueprint"]
+  },
+  {
+    "id": "uq-028",
+    "question": "Can I use Delay in function?",
+    "answer": "No, Delay is not allowed in a normal function. It works in macros and event-driven graphs instead.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["delay", "function", "macro", "blueprint"]
+  },
+  {
+    "id": "uq-029",
+    "question": "What is Sweep in SetActorLocation()",
+    "answer": "Sweep is a boolean flag that checks collision along the movement path while moving the actor.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["collision", "sweep", "movement", "actor"]
+  },
+  {
+    "id": "uq-030",
+    "question": "Hit Result",
+    "answer": "Hit Result can include the hit actor, component, bone name, impact point, impact normal, location, blocking hit flag, penetration flag, distance, face index, and physical material.",
+    "subtopic": "Unreal Classes",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["hit-result", "trace", "collision", "physics"]
+  },
+  {
+    "id": "uq-031",
+    "question": "How would you approach changing seasons in a game feature with a high number of tree actors?",
+    "answer": "The best approach is a material parameter collection. An alternative is a dynamic material instance assigned to each tree so one shared value can update the look of all trees.",
+    "subtopic": "Scenario based",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["material-parameter-collection", "dynamic-material-instance", "trees", "season-change"]
+  },
+  {
+    "id": "uq-032",
+    "question": "What's the best approach for character interaction with multiple object classes?",
+    "answer": "Use an interface class so different object types can share the same interaction contract without tight coupling.",
+    "subtopic": "Scenario based",
+    "difficulty": "Beginner",
+    "category": "Scenario based",
+    "tags": ["interface", "interaction", "decoupling", "objects"]
+  },
+  {
+    "id": "uq-033",
+    "question": "Gun: how do you trace the bullet so it hits at the widget cross-hair?",
+    "answer": "Trace from the camera forward for a few meters or up to max range, then trace from the gun muzzle toward that point or hit location.",
+    "subtopic": "Scenario based",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["tracing", "crosshair", "weapons", "camera"]
+  },
+  {
+    "id": "uq-034",
+    "question": "Different ways to achieve deformation of a vehicle.",
+    "answer": "You can use control rig or bone manipulation through animation blueprints, morph targets, or material world position offset depending on the effect you need.",
+    "subtopic": "Scenario based",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["vehicle", "deformation", "control-rig", "morph-targets"]
+  },
+  {
+    "id": "uq-035",
+    "question": "How would you implement different footstep sounds on different surface types such as metal, wood, concrete, and sand?",
+    "answer": "Assign physical materials to the surfaces, trace from the character while moving, detect the surface type, and switch the footstep sound based on that result.",
+    "subtopic": "Scenario based",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["footsteps", "physics-material", "surface-type", "audio"]
+  },
+  {
+    "id": "uq-036",
+    "question": "How would you approach spinning collectible creation?",
+    "answer": "The best approach is a shader using Time with RotateAboutWorldAxisCheap into World Position Offset. A simpler alternative is a spinning particle system, while a RotatingMovementComponent is the most general but least specialized option.",
+    "subtopic": "Scenario based",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["shader", "rotation", "collectible", "world-position-offset"]
   }
 ]

@@ -221,6 +221,71 @@ h1 {
   border-color: rgba(255, 255, 255, 0.09);
 }
 
+.button-primary {
+  color: #061019;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  border-color: transparent;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.drawer-eyebrow {
+  margin: 0 0 4px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+}
+
+.filter-drawer-surface h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+}
+
+.filter-drawer,
+.filter-backdrop {
+  display: block;
+}
+
+.filter-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 18;
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.filter-drawer {
+  position: relative;
+  margin-top: 18px;
+  z-index: 19;
+}
+
+.filter-drawer-surface {
+  background: rgba(9, 16, 25, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 18px;
+}
+
+.filter-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
 .filters {
   display: grid;
   gap: 16px;
@@ -436,6 +501,73 @@ h1 {
 
   .answer-toggle {
     width: 100%;
+  }
+
+  .toolbar {
+    gap: 14px;
+  }
+
+  .toolbar-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .toolbar-actions .button {
+    flex: 1 1 0;
+  }
+
+  .filter-toggle {
+    display: inline-flex;
+  }
+
+  .filter-drawer {
+    position: fixed;
+    inset: auto 12px 12px 12px;
+    z-index: 20;
+    margin-top: 0;
+    transform: translateY(120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+
+  .filter-drawer.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .filter-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .filter-drawer-surface {
+    max-height: min(72vh, 620px);
+    overflow: auto;
+    box-shadow: var(--shadow);
+  }
+
+  .filter-close {
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 781px) {
+  .filter-toggle {
+    display: none;
+  }
+
+  .filter-backdrop {
+    display: none;
+  }
+
+  .filter-drawer {
+    position: relative;
+    inset: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 }
 

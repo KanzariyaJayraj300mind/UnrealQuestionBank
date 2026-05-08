@@ -4,6 +4,7 @@ const state = {
   subtopic: "All",
   category: "All",
   tags: new Set(),
+  filterDrawerOpen: false,
 };
 
 let questions = [];
@@ -13,11 +14,15 @@ const elements = {
   visibleCount: document.getElementById("visibleCount"),
   filterCount: document.getElementById("filterCount"),
   searchInput: document.getElementById("searchInput"),
+  filterToggle: document.getElementById("filterToggle"),
+  filterClose: document.getElementById("filterClose"),
+  filterBackdrop: document.getElementById("filterBackdrop"),
   clearFilters: document.getElementById("clearFilters"),
   difficultyFilters: document.getElementById("difficultyFilters"),
   subtopicFilters: document.getElementById("subtopicFilters"),
   categoryFilters: document.getElementById("categoryFilters"),
   tagFilters: document.getElementById("tagFilters"),
+  filterDrawer: document.getElementById("filterDrawer"),
   activeFilters: document.getElementById("activeFilters"),
   resultsMeta: document.getElementById("resultsMeta"),
   questionList: document.getElementById("questionList"),
@@ -236,6 +241,15 @@ function update() {
   renderQuestions();
 }
 
+function syncFilterDrawer() {
+  const isMobile = window.matchMedia("(max-width: 780px)").matches;
+  const isOpen = isMobile ? state.filterDrawerOpen : true;
+  elements.filterDrawer.classList.toggle("is-open", isOpen);
+  elements.filterBackdrop.classList.toggle("is-open", isOpen);
+  elements.filterToggle.setAttribute("aria-expanded", String(isOpen));
+  elements.filterDrawer.setAttribute("aria-hidden", String(!isOpen));
+}
+
 async function loadQuestions() {
   const response = await fetch("./data/questions.json", { cache: "no-store" });
   if (!response.ok) {
@@ -246,6 +260,8 @@ async function loadQuestions() {
 }
 
 function bindControls() {
+  state.filterDrawerOpen = false;
+
   elements.searchInput.addEventListener("input", (event) => {
     state.search = event.target.value;
     update();
@@ -259,6 +275,21 @@ function bindControls() {
     state.tags.clear();
     elements.searchInput.value = "";
     update();
+  });
+
+  elements.filterToggle.addEventListener("click", () => {
+    state.filterDrawerOpen = !state.filterDrawerOpen;
+    syncFilterDrawer();
+  });
+
+  elements.filterClose.addEventListener("click", () => {
+    state.filterDrawerOpen = false;
+    syncFilterDrawer();
+  });
+
+  elements.filterBackdrop.addEventListener("click", () => {
+    state.filterDrawerOpen = false;
+    syncFilterDrawer();
   });
 
   ["difficultyFilters", "subtopicFilters", "categoryFilters", "tagFilters"].forEach((containerId) => {
@@ -282,9 +313,16 @@ function bindControls() {
         }
       }
 
+      if (window.matchMedia("(max-width: 780px)").matches) {
+        state.filterDrawerOpen = false;
+        syncFilterDrawer();
+      }
+
       update();
     });
   });
+
+  window.matchMedia("(max-width: 780px)").addEventListener("change", syncFilterDrawer);
 }
 
 async function boot() {
@@ -294,6 +332,7 @@ async function boot() {
     questions = await loadQuestions();
     renderFilterGroups();
     bindControls();
+    syncFilterDrawer();
     update();
   } catch (error) {
     console.error(error);
