@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unreal Engine Interview Question Bank</title>
+    <meta
+      name="description"
+      content="A mobile-friendly Unreal Engine interview question bank with filters for subtopics, difficulty, and tags."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Static question bank</p>
+          <h1>Unreal Engine interview questions, organized for quick revision.</h1>
+          <p class="lead">
+            Search, filter by subtopic and difficulty, and jump between tagged questions on a
+            clean mobile-first interface.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div>
+            <span class="hero-label">Questions</span>
+            <strong id="questionCount">0</strong>
+          </div>
+          <div>
+            <span class="hero-label">Visible</span>
+            <strong id="visibleCount">0</strong>
+          </div>
+          <div>
+            <span class="hero-label">Active filters</span>
+            <strong id="filterCount">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <label class="search">
+            <span>Search</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search questions, answers, tags..."
+              autocomplete="off"
+            />
+          </label>
+
+          <button id="clearFilters" class="button button-ghost" type="button">Clear filters</button>
+        </div>
+
+        <div class="filters">
+          <section class="filter-block">
+            <div class="filter-header">
+              <h2>Difficulty</h2>
+              <span>Single select</span>
+            </div>
+            <div id="difficultyFilters" class="chip-row"></div>
+          </section>
+
+          <section class="filter-block">
+            <div class="filter-header">
+              <h2>Sub Topics</h2>
+              <span>Single select</span>
+            </div>
+            <div id="subtopicFilters" class="chip-row"></div>
+          </section>
+
+          <section class="filter-block">
+            <div class="filter-header">
+              <h2>Category</h2>
+              <span>Single select</span>
+            </div>
+            <div id="categoryFilters" class="chip-row"></div>
+          </section>
+
+          <section class="filter-block">
+            <div class="filter-header">
+              <h2>Tags</h2>
+              <span>Multi select</span>
+            </div>
+            <div id="tagFilters" class="chip-row"></div>
+          </section>
+        </div>
+
+        <div class="active-filters">
+          <span class="active-label">Active</span>
+          <div id="activeFilters" class="active-list"></div>
+        </div>
+      </section>
+
+      <section class="results">
+        <div class="results-head">
+          <h2>Questions</h2>
+          <p id="resultsMeta">Loading...</p>
+        </div>
+        <div id="questionList" class="question-list"></div>
+      </section>
+    </main>
+
+    <template id="questionTemplate">
+      <article class="question-card">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="badge badge-topic"></span>
+            <span class="badge badge-category"></span>
+            <span class="badge badge-difficulty"></span>
+          </div>
+          <button class="answer-toggle" type="button">Show answer</button>
+        </div>
+        <h3 class="question-title"></h3>
+        <p class="question-answer"></p>
+        <div class="tag-row"></div>
+      </article>
+    </template>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

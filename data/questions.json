@@ -1,0 +1,164 @@
+[
+  {
+    "id": "ue-001",
+    "question": "What is the difference between a Pawn and a Character in Unreal Engine?",
+    "answer": "A Character is a specialized Pawn that includes a CharacterMovementComponent, a capsule collision, and common movement behavior. A Pawn is a more general controllable actor.",
+    "subtopic": "Gameplay Framework",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["pawn", "character", "movement", "framework"]
+  },
+  {
+    "id": "ue-002",
+    "question": "When would you use a GameMode versus a GameState?",
+    "answer": "GameMode defines the rules for a match on the server, while GameState holds replicated match state that clients can read.",
+    "subtopic": "Gameplay Framework",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["gamemode", "gamestate", "multiplayer", "replication"]
+  },
+  {
+    "id": "ue-003",
+    "question": "What is the purpose of a PlayerController?",
+    "answer": "PlayerController acts as the bridge between the player's input and the Pawn or UI they control. It persists across Pawn possession changes.",
+    "subtopic": "Gameplay Framework",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["input", "controller", "possession", "ui"]
+  },
+  {
+    "id": "ue-004",
+    "question": "How does replication work in Unreal Engine?",
+    "answer": "Replication sends server-authoritative property and function state to clients over the network using replicated variables, RPCs, and relevancy rules.",
+    "subtopic": "Networking",
+    "difficulty": "Advanced",
+    "category": "Theoretical",
+    "tags": ["replication", "rpc", "server", "multiplayer"]
+  },
+  {
+    "id": "ue-005",
+    "question": "What is an RPC and when should you use one?",
+    "answer": "An RPC is a remote function call used to execute logic on the server or clients. Use it for time-sensitive or authority-based gameplay events that should not be handled by replicated state alone.",
+    "subtopic": "Networking",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["rpc", "server", "client", "authority"]
+  },
+  {
+    "id": "ue-006",
+    "question": "What is the difference between Tick and timers?",
+    "answer": "Tick runs every frame and is useful for continuous updates. Timers are better for scheduled or repeated work because they reduce per-frame overhead and are easier to control.",
+    "subtopic": "Performance",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["tick", "timer", "optimization", "performance"]
+  },
+  {
+    "id": "ue-007",
+    "question": "What causes garbage collection pressure in Unreal Engine?",
+    "answer": "Untracked UObject references, frequent object creation, and unmanaged lifetime patterns can increase GC work. Proper UPROPERTY references and object pooling help reduce pressure.",
+    "subtopic": "Performance",
+    "difficulty": "Advanced",
+    "category": "Core",
+    "tags": ["garbage-collection", "uobject", "memory", "performance"]
+  },
+  {
+    "id": "ue-008",
+    "question": "How do Blueprint Interfaces help in gameplay code?",
+    "answer": "Blueprint Interfaces define a contract between unrelated objects so they can communicate without hard references, which helps reduce coupling.",
+    "subtopic": "Blueprints",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["blueprint", "interface", "decoupling", "communication"]
+  },
+  {
+    "id": "ue-009",
+    "question": "What is the difference between a Blueprint Macro and a Function?",
+    "answer": "A Function is a reusable unit with execution flow and local scope. A Macro expands inline and is useful for repeated control flow, but it can be harder to debug.",
+    "subtopic": "Blueprints",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["blueprint", "macro", "function", "logic"]
+  },
+  {
+    "id": "ue-010",
+    "question": "What is the role of UPROPERTY in Unreal C++?",
+    "answer": "UPROPERTY exposes members to reflection, serialization, garbage collection, and editor integration depending on the specifiers you choose.",
+    "subtopic": "C++",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["c++", "reflection", "serialization", "uproperty"]
+  },
+  {
+    "id": "ue-011",
+    "question": "Why is TWeakObjectPtr useful?",
+    "answer": "TWeakObjectPtr lets you reference UObjects without preventing garbage collection. It is useful when you need a non-owning pointer that can safely expire.",
+    "subtopic": "C++",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["c++", "memory", "pointer", "uobject"]
+  },
+  {
+    "id": "ue-012",
+    "question": "How does the Unreal rendering pipeline use materials and shaders?",
+    "answer": "Materials define the graph and parameters for surface behavior, while shaders are the compiled programs that execute on the GPU to render that material.",
+    "subtopic": "Rendering",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["rendering", "material", "shader", "gpu"]
+  },
+  {
+    "id": "ue-013",
+    "question": "What is Lumen used for?",
+    "answer": "Lumen is Unreal Engine's dynamic global illumination and reflections system for real-time lighting workflows.",
+    "subtopic": "Rendering",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["rendering", "lumen", "lighting", "reflections"]
+  },
+  {
+    "id": "ue-014",
+    "question": "How do Animation Blueprints fit into character animation?",
+    "answer": "Animation Blueprints drive skeletal mesh animation logic through state machines, blend spaces, and pose graphs.",
+    "subtopic": "Animation",
+    "difficulty": "Intermediate",
+    "category": "Theoretical",
+    "tags": ["animation", "animblueprint", "state-machine", "blend-space"]
+  },
+  {
+    "id": "ue-015",
+    "question": "What is a State Machine in animation systems?",
+    "answer": "A State Machine controls transitions between animation states like idle, walk, run, or jump using defined rules.",
+    "subtopic": "Animation",
+    "difficulty": "Beginner",
+    "category": "Theoretical",
+    "tags": ["animation", "state-machine", "transitions", "movement"]
+  },
+  {
+    "id": "ue-016",
+    "question": "What is an AI Behavior Tree used for?",
+    "answer": "Behavior Trees structure AI decision-making by combining tasks, decorators, and services in a modular flow.",
+    "subtopic": "AI",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["ai", "behavior-tree", "decorator", "decision-making"]
+  },
+  {
+    "id": "ue-017",
+    "question": "When should you use Soft References in Unreal Engine?",
+    "answer": "Use soft references when you want to reference assets without forcing them to load immediately, which helps manage memory and load times.",
+    "subtopic": "Asset Management",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["assets", "soft-reference", "memory", "loading"]
+  },
+  {
+    "id": "ue-018",
+    "question": "What is the difference between Primary Data Assets and Data Tables?",
+    "answer": "Primary Data Assets are asset-based objects that work well for structured, extensible game data, while Data Tables are row-based and often easier for spreadsheet-driven content.",
+    "subtopic": "Data",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["data", "assets", "datatable", "configuration"]
+  }
+]
