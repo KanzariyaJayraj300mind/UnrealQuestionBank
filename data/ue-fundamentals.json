@@ -2,225 +2,406 @@
   {
     "question": "What are delegates, and how do you use them in Unreal Engine for event handling?",
     "answer": "Delegates are callback objects used for event handling. You declare the delegate, bind a function to it, and then call it when the event happens.",
-    "subtopic": "Delegates",
+    "subtopic": "Architecture",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["delegates", "events", "binding", "callbacks"]
+    "tags": [
+      "delegates",
+      "events",
+      "binding",
+      "callbacks"
+    ]
   },
   {
     "question": "What are subsystems and what are their benefits?",
     "answer": "Subsystems are a way to implement singleton-like classes in Unreal. Their lifecycle matches the GameInstance, and they can be accessed from anywhere that has access to the owning context.",
-    "subtopic": "Subsystems",
+    "subtopic": "Architecture",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["subsystems", "singleton", "game instance", "lifecycle"]
+    "tags": [
+      "subsystems",
+      "singleton",
+      "game instance",
+      "lifecycle"
+    ]
   },
   {
     "question": "What is the purpose of the GameMode, GameState, and PlayerController classes in Unreal Engine?",
     "answer": "GameMode defines the rules of the game and exists only on the server. GameState stores replicated game-wide state for all clients. PlayerController handles player input and player-specific control logic.",
-    "subtopic": "Gameplay Framework",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["gamemode", "gamestate", "playercontroller", "framework"]
+    "tags": [
+      "gamemode",
+      "gamestate",
+      "playercontroller",
+      "framework"
+    ]
   },
   {
     "question": "What is the difference between BlueprintImplementableEvent and BlueprintNativeEvent?",
     "answer": "BlueprintImplementableEvent must be implemented in Blueprint. BlueprintNativeEvent can have a default C++ implementation and can also be overridden in Blueprint.",
-    "subtopic": "Blueprints",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["blueprintimplementableevent", "blueprintnativeevent", "blueprints", "c++"]
+    "tags": [
+      "blueprintimplementableevent",
+      "blueprintnativeevent",
+      "blueprints",
+      "c++"
+    ]
   },
   {
     "question": "What is the difference between SpawnActor and Deferred Spawn?",
     "answer": "SpawnActor creates and initializes the actor immediately. Deferred Spawn allows custom setup before calling FinishSpawningActor.",
-    "subtopic": "Actors",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["spawnactor", "deferred spawn", "actors", "spawning"]
+    "tags": [
+      "spawnactor",
+      "deferred spawn",
+      "actors",
+      "spawning"
+    ]
   },
   {
     "question": "Can you make an array of arrays in Unreal?",
     "answer": "Not directly as a plain nested array in most cases. A common approach is to create a struct that contains an array, then make an array of that struct.",
-    "subtopic": "Containers",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["array", "struct", "containers", "blueprint"]
+    "tags": [
+      "array",
+      "struct",
+      "containers",
+      "blueprint"
+    ]
   },
   {
     "question": "What are common UFUNCTION specifiers?",
     "answer": "Common UFUNCTION specifiers include BlueprintCallable, BlueprintPure, BlueprintImplementableEvent, and BlueprintNativeEvent.",
-    "subtopic": "UFUNCTION",
+    "subtopic": "cpp",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["ufunction", "blueprintcallable", "blueprintpure", "specifiers"]
+    "tags": [
+      "ufunction",
+      "blueprintcallable",
+      "blueprintpure",
+      "specifiers"
+    ]
   },
   {
     "question": "What are common UPROPERTY specifiers?",
     "answer": "Common UPROPERTY specifiers include BlueprintReadWrite, BlueprintReadOnly, EditAnywhere, EditDefaultsOnly, EditInstanceOnly, VisibleAnywhere, VisibleDefaultsOnly, and VisibleInstanceOnly.",
-    "subtopic": "UPROPERTY",
+    "subtopic": "cpp",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["uproperty", "specifiers", "blueprintreadonly", "editanywhere"]
+    "tags": [
+      "uproperty",
+      "specifiers",
+      "blueprintreadonly",
+      "editanywhere"
+    ]
   },
   {
     "question": "If you have a common function that is needed in multiple classes, where should you put it?",
     "answer": "A Blueprint Function Library or Macro Library is usually the right place for shared utility logic.",
-    "subtopic": "Blueprints",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["function library", "macro library", "blueprint", "shared logic"]
+    "tags": [
+      "function library",
+      "macro library",
+      "blueprint",
+      "shared logic"
+    ]
   },
   {
     "question": "Can you use Delay in a function?",
     "answer": "No, Delay cannot be used in a normal function. It can be used in macros or event graphs where latent actions are supported.",
-    "subtopic": "Blueprints",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["delay", "latent action", "functions", "macros"]
+    "tags": [
+      "delay",
+      "latent action",
+      "functions",
+      "macros"
+    ]
   },
   {
     "question": "What is Sweep in SetActorLocation()?",
     "answer": "Sweep is a boolean flag that checks for collision along the movement path when moving the actor.",
-    "subtopic": "Actors",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["sweep", "setactorlocation", "collision", "movement"]
+    "tags": [
+      "sweep",
+      "setactorlocation",
+      "collision",
+      "movement"
+    ]
   },
   {
     "question": "What information does Hit Result contain?",
     "answer": "Hit Result can include the actor hit, component hit, bone name, impact point, impact normal, location, blocking hit flag, start penetrating flag, distance, face index, and physical material.",
-    "subtopic": "Collision",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["hit result", "collision", "trace", "impact point"]
+    "tags": [
+      "hit result",
+      "collision",
+      "trace",
+      "impact point"
+    ]
   },
   {
     "question": "What are Blueprint Interfaces in Unreal Engine, and when would you use them?",
     "answer": "Blueprint Interfaces define a common set of functions that multiple Blueprints can implement. They are useful when different Blueprint classes need to communicate without knowing each other's concrete class.",
-    "subtopic": "Blueprints",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["blueprint interface", "communication", "decoupling", "blueprints"]
+    "tags": [
+      "blueprint interface",
+      "communication",
+      "decoupling",
+      "blueprints"
+    ]
   },
   {
     "question": "What are the different methods of packaging a game in Unreal Engine, and what build configurations are available?",
     "answer": "You can package through the Toolbar Platforms menu, the Project Launcher, or automation with RunUAT.exe. Common build configurations are Debug, Development, Shipping, and Test.",
-    "subtopic": "Packaging",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["packaging", "build configuration", "debug", "shipping", "uat"]
+    "tags": [
+      "packaging",
+      "build configuration",
+      "debug",
+      "shipping",
+      "uat"
+    ]
   },
   {
     "question": "What are modules in Unreal Engine and how is module loading managed?",
     "answer": "Modules are common building blocks of a game or plugin. They are declared in .uproject or .uplugin files, and loading is controlled by the LoadingPhase setting such as PostSplashScreen, PreLoadingScreen, Default, PostEngineInit, or manual loading.",
-    "subtopic": "Modules",
+    "subtopic": "cpp",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["modules", "loading phase", "uproject", "uplugin"]
+    "tags": [
+      "modules",
+      "loading phase",
+      "uproject",
+      "uplugin"
+    ]
   },
   {
     "question": "What is required to access a class across another module?",
     "answer": "You need to add the other module as a Public dependency in the consuming module's Build.cs file so the classes are visible to that module.",
-    "subtopic": "Modules",
+    "subtopic": "cpp",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["modules", "build.cs", "dependencies", "public dependency"]
+    "tags": [
+      "modules",
+      "build.cs",
+      "dependencies",
+      "public dependency"
+    ]
   },
   {
     "question": "Where are collision channel settings and other project settings stored?",
     "answer": "They are stored in Config/DefaultEngine.ini. That file can also contain project name, supported platforms, target hardware, graphics settings, redirectors, DirectX version, physics channels, physics surfaces, default maps, default GameMode, default GameInstance, plugin-specific settings, and config-based UPROPERTY values.",
-    "subtopic": "Config",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["config", "defaultengine.ini", "collision channels", "project settings"]
+    "tags": [
+      "config",
+      "defaultengine.ini",
+      "collision channels",
+      "project settings"
+    ]
   },
   {
     "question": "How do you expose a C++ function or variable to Blueprints?",
     "answer": "Use UFUNCTION for functions and UPROPERTY for variables. Common specifiers include BlueprintReadWrite, BlueprintReadOnly, BlueprintCallable, and BlueprintPure.",
-    "subtopic": "Blueprints",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["c++", "blueprint", "ufunction", "uproperty"]
+    "tags": [
+      "c++",
+      "blueprint",
+      "ufunction",
+      "uproperty"
+    ]
   },
   {
     "question": "How do you make a function execute in both Blueprint and C++?",
     "answer": "Use a BlueprintNativeEvent. C++ gets the [FunctionName]_Implementation method, and Blueprint can override the event while still keeping the native default behavior.",
-    "subtopic": "Blueprints",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["blueprintnativeevent", "cpp", "blueprint", "implementation"]
+    "tags": [
+      "blueprintnativeevent",
+      "cpp",
+      "blueprint",
+      "implementation"
+    ]
   },
   {
     "question": "What is a pak file in Unreal Engine and how does it help updates?",
     "answer": "Pak files are created during packaging and store game content efficiently. They help organize content, improve loading, and make updates easier because related assets can be grouped so only the changed pak needs to be distributed.",
-    "subtopic": "Packaging",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["pak file", "packaging", "updates", "content"]
+    "tags": [
+      "pak file",
+      "packaging",
+      "updates",
+      "content"
+    ]
   },
   {
     "question": "What do you think about using a Data Table with meshes and materials for a customizable actor, and what is the difference between soft and hard references?",
     "answer": "It is acceptable, but hard references will load the assets immediately, which can increase load time and memory usage. Soft references are better when you want to load meshes or other assets only when they are needed.",
-    "subtopic": "Asset References",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["data table", "soft reference", "hard reference", "assets"]
+    "tags": [
+      "data table",
+      "soft reference",
+      "hard reference",
+      "assets"
+    ]
   },
   {
     "question": "What is the role of GameInstance in Unreal Engine?",
     "answer": "GameInstance is a persistent object that exists for the lifetime of the game session. It is useful for storing data that should survive level changes, such as player settings or session data.",
-    "subtopic": "Gameplay Framework",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["gameinstance", "lifetime", "persistent data", "framework"]
+    "tags": [
+      "gameinstance",
+      "lifetime",
+      "persistent data",
+      "framework"
+    ]
   },
   {
     "question": "What is the difference between a Pawn and a Character?",
     "answer": "A Pawn is any actor that can be possessed and controlled. A Character is a specialized Pawn that includes a movement component and a capsule-based character setup.",
-    "subtopic": "Gameplay Framework",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["pawn", "character", "possession", "movement"]
+    "tags": [
+      "pawn",
+      "character",
+      "possession",
+      "movement"
+    ]
   },
   {
     "question": "What is the typical lifecycle of an Actor in Unreal Engine?",
     "answer": "An Actor is constructed, components are initialized, it enters the world, BeginPlay runs, it can Tick if enabled, and then it is destroyed when removed from the world.",
-    "subtopic": "Actors",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["actor", "lifecycle", "beginplay", "tick", "destroy"]
+    "tags": [
+      "actor",
+      "lifecycle",
+      "beginplay",
+      "tick",
+      "destroy"
+    ]
   },
   {
     "question": "What is the difference between an Actor Component and a Scene Component?",
     "answer": "An Actor Component adds reusable logic to an actor but does not have a transform. A Scene Component has a transform and can be attached to other scene components.",
-    "subtopic": "Components",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["components", "actor component", "scene component", "transform"]
+    "tags": [
+      "components",
+      "actor component",
+      "scene component",
+      "transform"
+    ]
   },
   {
     "question": "What is the difference between enhanced input and the older input system at a high level?",
     "answer": "Enhanced Input provides more flexible input mapping and context-based control compared to the older fixed bindings approach, making it easier to switch input behavior at runtime.",
-    "subtopic": "Input",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["input", "enhanced input", "mapping context", "controls"]
+    "tags": [
+      "input",
+      "enhanced input",
+      "mapping context",
+      "controls"
+    ]
   },
   {
     "question": "What is the difference between collision presets, object types, and collision responses?",
     "answer": "Object types classify what an object is, collision presets bundle common collision settings, and collision responses define how one object responds to another object's type or channel.",
-    "subtopic": "Collision",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["collision", "presets", "object type", "responses"]
+    "tags": [
+      "collision",
+      "presets",
+      "object type",
+      "responses"
+    ]
   },
   {
     "question": "What is the difference between a static mesh and a skeletal mesh?",
     "answer": "A static mesh is a non-animated mesh used for fixed geometry. A skeletal mesh is rigged to a skeleton and supports animation and deformation.",
-    "subtopic": "Rendering",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["static mesh", "skeletal mesh", "animation", "geometry"]
+    "tags": [
+      "static mesh",
+      "skeletal mesh",
+      "animation",
+      "geometry"
+    ]
+  },
+  {
+    "question": "What are some basic VR considerations in Unreal Engine?",
+    "answer": "VR projects need stable frame rates, correct stereo rendering, comfortable locomotion, tracked input, and careful optimization to reduce motion sickness and latency.",
+    "subtopic": "VR",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": [
+      "vr",
+      "stereo rendering",
+      "performance",
+      "latency"
+    ]
+  },
+  {
+    "question": "How do motion controllers work in a VR experience?",
+    "answer": "Motion controllers represent the player's tracked hands or devices. They are used to drive interaction, grabbing, pointing, and hand-based locomotion in VR.",
+    "subtopic": "VR",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": [
+      "vr",
+      "motion controller",
+      "tracking",
+      "interaction"
+    ]
+  },
+  {
+    "question": "What is the most important performance goal for VR in Unreal Engine?",
+    "answer": "Maintain a consistent high frame rate with low latency, since dropped frames or stutter are especially uncomfortable in VR.",
+    "subtopic": "VR",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": [
+      "vr",
+      "performance",
+      "latency",
+      "frame rate"
+    ]
   }
 ]

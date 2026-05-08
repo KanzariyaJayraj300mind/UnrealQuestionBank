@@ -2,121 +2,203 @@
   {
     "question": "How would you optimize the performance of a scene in Unreal Engine?",
     "answer": "Use art-side optimizations like LODs, distance/frustum/occlusion culling, instanced static meshes, hierarchical instanced static meshes, and mip maps. On the code side, reduce tick frequency and use object pooling where possible.",
-    "subtopic": "Scene Optimization",
+    "subtopic": "optimization",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["optimization", "lod", "culling", "instancing", "mip maps", "tick", "pooling"]
+    "tags": [
+      "optimization",
+      "lod",
+      "culling",
+      "instancing",
+      "mip maps",
+      "tick",
+      "pooling"
+    ]
   },
   {
     "question": "What is the purpose of LOD in Unreal Engine?",
     "answer": "LOD reduces rendering cost by using simpler mesh versions as the camera moves farther away from an object.",
-    "subtopic": "Rendering Optimization",
+    "subtopic": "optimization",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["lod", "mesh", "rendering", "optimization"]
+    "tags": [
+      "lod",
+      "mesh",
+      "rendering",
+      "optimization"
+    ]
   },
   {
     "question": "What types of culling are commonly used to improve performance?",
     "answer": "Distance culling removes objects beyond a certain range, frustum culling skips objects outside the camera view, and occlusion culling skips objects blocked by other geometry.",
-    "subtopic": "Rendering Optimization",
+    "subtopic": "optimization",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["culling", "distance", "frustum", "occlusion"]
+    "tags": [
+      "culling",
+      "distance",
+      "frustum",
+      "occlusion"
+    ]
   },
   {
     "question": "Why are Instanced Static Meshes and Hierarchical Instanced Static Meshes useful?",
     "answer": "They reduce draw calls by rendering many copies of the same mesh more efficiently, which is useful for objects like grass, trees, or repeated props.",
-    "subtopic": "Rendering Optimization",
+    "subtopic": "optimization",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["instanced static mesh", "hierarchical instanced static mesh", "draw calls", "rendering"]
+    "tags": [
+      "instanced static mesh",
+      "hierarchical instanced static mesh",
+      "draw calls",
+      "rendering"
+    ]
   },
   {
     "question": "How do mip maps help performance and visual quality?",
     "answer": "Mip maps are precomputed lower-resolution texture versions that reduce aliasing and improve sampling performance when textures are far from the camera.",
-    "subtopic": "Texture Optimization",
+    "subtopic": "optimization",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["mip maps", "textures", "aliasing", "sampling"]
+    "tags": [
+      "mip maps",
+      "textures",
+      "aliasing",
+      "sampling"
+    ]
   },
   {
     "question": "How can you optimize tick performance in Unreal Engine?",
     "answer": "Reduce tick rate, disable tick when it is not needed, and move logic to timers or event-driven updates when possible.",
-    "subtopic": "Code Optimization",
+    "subtopic": "optimization",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["tick", "performance", "timers", "optimization"]
+    "tags": [
+      "tick",
+      "performance",
+      "timers",
+      "optimization"
+    ]
   },
   {
     "question": "What is object pooling and why is it useful?",
     "answer": "Object pooling reuses existing actors or objects instead of spawning and destroying them repeatedly, which reduces allocation overhead and runtime spikes.",
-    "subtopic": "Code Optimization",
+    "subtopic": "optimization",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["object pooling", "memory", "spawning", "optimization"]
+    "tags": [
+      "object pooling",
+      "memory",
+      "spawning",
+      "optimization"
+    ]
   },
   {
     "question": "How do you profile performance in Unreal Engine?",
     "answer": "Use profiling tools and stats such as Stat Unit, Stat FPS, Stat Game, and Unreal Insights to find bottlenecks in rendering, game thread work, and asset usage.",
-    "subtopic": "Profiling",
+    "subtopic": "optimization",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["profiling", "stat unit", "unreal insights", "fps"]
+    "tags": [
+      "profiling",
+      "stat unit",
+      "unreal insights",
+      "fps"
+    ]
   },
   {
     "question": "What is the purpose of Level Streaming in Unreal Engine, and when would you use it?",
     "answer": "Level Streaming dynamically loads and unloads levels or sub-levels during runtime. It is useful for dynamic content, optimizing performance, and creating seamless transitions in large worlds.",
-    "subtopic": "Level Streaming",
+    "subtopic": "optimization",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["level streaming", "streaming levels", "performance", "world streaming"]
+    "tags": [
+      "level streaming",
+      "streaming levels",
+      "performance",
+      "world streaming"
+    ]
   },
   {
     "question": "How would you optimize a particle system for performance?",
     "answer": "Use culling, reduce spawn counts based on distance, disable non-visible emitters, and watch expensive settings such as spawn rate, update scratchpads, and lifetime.",
-    "subtopic": "VFX Optimization",
+    "subtopic": "optimization",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["particles", "vfx", "culling", "optimization", "spawn rate"]
+    "tags": [
+      "particles",
+      "vfx",
+      "culling",
+      "optimization",
+      "spawn rate"
+    ]
   },
   {
     "question": "Can you change the material of an Instanced Static Mesh, and what is the exception for color changes?",
     "answer": "You usually cannot set unique materials per instance because instancing relies on shared mesh and material data to save resources. For per-instance variation, Unreal supports options like per-instance random or material-driven color variation.",
-    "subtopic": "Instancing",
+    "subtopic": "optimization",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["instanced static mesh", "material", "instancing", "color variation"]
+    "tags": [
+      "instanced static mesh",
+      "material",
+      "instancing",
+      "color variation"
+    ]
   },
   {
     "question": "What is the main difference between Instanced Static Meshes and Hierarchical Instanced Static Meshes?",
     "answer": "Instanced Static Meshes batch many copies of the same mesh to reduce draw calls. Hierarchical Instanced Static Meshes add a spatial hierarchy, which improves culling and makes them better for large scattered sets of repeated meshes.",
-    "subtopic": "Instancing",
+    "subtopic": "optimization",
     "difficulty": "Hard",
     "category": "Core",
-    "tags": ["ism", "hism", "instancing", "culling", "draw calls"]
+    "tags": [
+      "ism",
+      "hism",
+      "instancing",
+      "culling",
+      "draw calls"
+    ]
   },
   {
     "question": "When should you prefer HISM over ISM?",
     "answer": "Prefer HISM when you have a very large number of repeated meshes spread across the world and you want better culling behavior. ISM is usually enough for smaller or more localized sets where hierarchy overhead is unnecessary.",
-    "subtopic": "Instancing",
+    "subtopic": "optimization",
     "difficulty": "Hard",
     "category": "Core",
-    "tags": ["hism", "ism", "optimization", "culling", "performance"]
+    "tags": [
+      "hism",
+      "ism",
+      "optimization",
+      "culling",
+      "performance"
+    ]
   },
   {
     "question": "Why can large HISM updates become expensive, and how would you reduce that cost?",
     "answer": "HISM updates can be expensive because changes may require rebuilding or updating the instance hierarchy. Reduce cost by batching changes, avoiding frequent per-frame instance churn, and using spawn or removal patterns that minimize hierarchy rebuilds.",
-    "subtopic": "Instancing",
+    "subtopic": "optimization",
     "difficulty": "Hard",
     "category": "Core",
-    "tags": ["hism", "performance", "hierarchy", "instance updates"]
+    "tags": [
+      "hism",
+      "performance",
+      "hierarchy",
+      "instance updates"
+    ]
   },
   {
     "question": "What are the tradeoffs of using ISM/HISM for gameplay objects instead of individual actors?",
     "answer": "ISM and HISM greatly reduce draw calls and memory overhead, but they make per-instance gameplay logic, unique collision handling, and individual animation or state management more difficult compared to separate actors.",
-    "subtopic": "Instancing",
+    "subtopic": "optimization",
     "difficulty": "Hard",
     "category": "Core",
-    "tags": ["ism", "hism", "tradeoffs", "gameplay", "collision"]
+    "tags": [
+      "ism",
+      "hism",
+      "tradeoffs",
+      "gameplay",
+      "collision"
+    ]
   }
 ]

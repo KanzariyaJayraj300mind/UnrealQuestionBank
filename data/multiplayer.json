@@ -2,49 +2,79 @@
   {
     "question": "For replication, how many types of replication are there? Give a scenario for each.",
     "answer": "RepNotify: use when a change should trigger a reaction, such as a player coming into proximity to an opened chest. Replicated variable: use when continuous updates are needed, such as speed. Multicast: use when something happens on the client and needs to be updated only once, such as setting a name.",
-    "subtopic": "Replication",
+    "subtopic": "Multiplayer",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["replication", "repnotify", "multicast", "variables"]
+    "tags": [
+      "replication",
+      "repnotify",
+      "multicast",
+      "variables"
+    ]
   },
   {
     "question": "Explain RPC in Unreal Engine. Give the types of RPC.",
     "answer": "RPCs are used to call something on another instance. Types include Run on Server, Run on Owning Client, and NetMulticast.",
-    "subtopic": "RPC",
+    "subtopic": "Multiplayer",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["rpc", "server", "client", "multicast"]
+    "tags": [
+      "rpc",
+      "server",
+      "client",
+      "multicast"
+    ]
   },
   {
     "question": "How can you prevent common cheating in multiplayer?",
     "answer": "Run critical functions on the server side, validate server-side before executing functions using validation, and enforce min and max limits on variables.",
-    "subtopic": "Security",
+    "subtopic": "Multiplayer",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["cheating", "security", "server", "validation"]
+    "tags": [
+      "cheating",
+      "security",
+      "server",
+      "validation"
+    ]
   },
   {
     "question": "Explain client-side prediction and server-side correction.",
     "answer": "Client-side prediction immediately simulates the result of input for responsiveness. Server-side correction validates the client state and overrides it with authoritative server state when needed.",
-    "subtopic": "Networking",
+    "subtopic": "Multiplayer",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["prediction", "correction", "client", "server"]
+    "tags": [
+      "prediction",
+      "correction",
+      "client",
+      "server"
+    ]
   },
   {
     "question": "Which class stays on the server or client?",
     "answer": "GameMode exists only on the server. Controller exists on both, with the server owning the authoritative controller and clients having local copies. GameState exists on both and is replicated. PlayerState exists on both and is replicated.",
-    "subtopic": "Gameplay Framework",
+    "subtopic": "fundamentals",
     "difficulty": "Beginner",
     "category": "Core",
-    "tags": ["gamemode", "controller", "gamestate", "playerstate"]
+    "tags": [
+      "gamemode",
+      "controller",
+      "gamestate",
+      "playerstate"
+    ]
   },
   {
     "question": "What are the different travel types in Unreal Engine?",
     "answer": "UEngine::Browse performs a hard reset and disconnects before loading a new map. UWorld::ServerTravel loads a new map on the server and sends connected clients with it. APlayerController::ClientTravel can move a client to a specified map or server. Seamless travel preserves actors such as Controller and PlayerState, while non-seamless travel does not carry old data forward.",
-    "subtopic": "Travel",
+    "subtopic": "Multiplayer",
     "difficulty": "Intermediate",
     "category": "Core",
-    "tags": ["travel", "servertravel", "clienttravel", "seamless travel"]
+    "tags": [
+      "travel",
+      "servertravel",
+      "clienttravel",
+      "seamless travel"
+    ]
   }
 ]

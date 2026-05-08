@@ -7,6 +7,20 @@ const state = {
   filterDrawerOpen: false,
 };
 
+const subtopicOptions = [
+  "AI",
+  "Multiplayer",
+  "fundamentals",
+  "material",
+  "animations",
+  "UMG",
+  "cpp",
+  "optimization",
+  "VR",
+  "Architecture",
+  "VFX",
+];
+
 let questions = [];
 
 const elements = {
@@ -43,7 +57,7 @@ function buildChip(label, value, type, active) {
 
 function renderFilterGroups() {
   const difficulties = ["All", ...new Set(questions.map((item) => item.difficulty))];
-  const subtopics = ["All", ...new Set(questions.map((item) => item.subtopic))];
+  const subtopics = ["All", ...subtopicOptions];
   const categories = ["All", ...new Set(questions.map((item) => item.category))];
   const tags = [...new Set(questions.flatMap((item) => item.tags))].sort((a, b) =>
     a.localeCompare(b),

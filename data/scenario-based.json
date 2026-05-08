@@ -2,58 +2,94 @@
   {
     "question": "How would you approach changing seasons in a game feature with a high number of tree actors?",
     "answer": "Use a material parameter collection so one shared value can update the look of all trees. A dynamic material instance per tree is an alternative if you need more control per actor.",
-    "subtopic": "Environment",
+    "subtopic": "material",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["material-parameter-collection", "dynamic-material-instance", "trees", "season-change"]
+    "tags": [
+      "material-parameter-collection",
+      "dynamic-material-instance",
+      "trees",
+      "season-change"
+    ]
   },
   {
     "question": "What's the best approach for character interaction with multiple object classes?",
     "answer": "Use an interface so different object types can share the same interaction contract without tight coupling.",
-    "subtopic": "Interaction",
+    "subtopic": "Architecture",
     "difficulty": "Beginner",
     "category": "Scenario based",
-    "tags": ["interface", "interaction", "decoupling", "objects"]
+    "tags": [
+      "interface",
+      "interaction",
+      "decoupling",
+      "objects"
+    ]
   },
   {
     "question": "How do you trace the bullet so it hits at the widget cross-hair?",
     "answer": "Trace from the camera forward for a short distance or up to max range, then trace from the gun muzzle toward that point or hit location.",
-    "subtopic": "Weapons",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["tracing", "crosshair", "weapons", "camera"]
+    "tags": [
+      "tracing",
+      "crosshair",
+      "weapons",
+      "camera"
+    ]
   },
   {
     "question": "What are different ways to achieve deformation of a vehicle?",
     "answer": "You can use Control Rig or bone manipulation through animation blueprints, morph targets, or material world position offset depending on the effect you need.",
-    "subtopic": "Vehicles",
+    "subtopic": "animations",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["vehicle", "deformation", "control-rig", "morph-targets"]
+    "tags": [
+      "vehicle",
+      "deformation",
+      "control-rig",
+      "morph-targets"
+    ]
   },
   {
     "question": "How would you implement different footstep sounds on different surface types such as metal, wood, concrete, and sand?",
     "answer": "Assign physical materials to the surfaces, trace from the character while moving, detect the surface type, and switch the footstep sound based on that result.",
-    "subtopic": "Audio",
+    "subtopic": "fundamentals",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["footsteps", "physics-material", "surface-type", "audio"]
+    "tags": [
+      "footsteps",
+      "physics-material",
+      "surface-type",
+      "audio"
+    ]
   },
   {
     "question": "How would you approach spinning collectible creation?",
     "answer": "A shader using Time with RotateAboutWorldAxisCheap into World Position Offset is efficient. A spinning particle system is a simpler alternative, while a RotatingMovementComponent is the most general but least specialized option.",
-    "subtopic": "Visual Effects",
+    "subtopic": "VFX",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["shader", "rotation", "collectible", "world-position-offset"]
+    "tags": [
+      "shader",
+      "rotation",
+      "collectible",
+      "world-position-offset"
+    ]
   },
   {
     "question": "In a shooting game, Player shoots Barrel A, Barrel A explodes and triggers Barrel B, and Barrel B explodes and kills an enemy. Who is the Damage Instigator and who is the Damage Causer?",
     "answer": "Damage Instigator: Barrel B. Damage Causer: the player. The instigator is the actor that directly caused the final damage event, while the causer is the original source of the chain.",
-    "subtopic": "Damage System",
+    "subtopic": "Multiplayer",
     "difficulty": "Beginner",
     "category": "Scenario based",
-    "tags": ["damage", "instigator", "causer", "scenario", "multiplayer"]
+    "tags": [
+      "damage",
+      "instigator",
+      "causer",
+      "scenario",
+      "multiplayer"
+    ]
   },
   {
     "question": "In a multiplayer shooter, a player fires a weapon and nearby clients must see the muzzle flash and impact effect. What networking pattern should you use?",
@@ -61,7 +97,13 @@
     "subtopic": "Multiplayer",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["multiplayer", "rpc", "multicast", "visual effects", "replication"]
+    "tags": [
+      "multiplayer",
+      "rpc",
+      "multicast",
+      "visual effects",
+      "replication"
+    ]
   },
   {
     "question": "A pickup item should disappear for one player only after they collect it, but remain visible for others until they collect theirs. How would you implement that?",
@@ -69,7 +111,13 @@
     "subtopic": "Multiplayer",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["multiplayer", "ownership", "replication", "pickup", "visibility"]
+    "tags": [
+      "multiplayer",
+      "ownership",
+      "replication",
+      "pickup",
+      "visibility"
+    ]
   },
   {
     "question": "A character is moving smoothly on the local client but rubber-banding on the server under lag. What is the likely issue and how would you address it?",
@@ -77,7 +125,13 @@
     "subtopic": "Multiplayer",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["multiplayer", "prediction", "correction", "movement", "lag"]
+    "tags": [
+      "multiplayer",
+      "prediction",
+      "correction",
+      "movement",
+      "lag"
+    ]
   },
   {
     "question": "A player opens a door and all connected clients should see it open, but late-joining players should also see the door in its open state. What should you use?",
@@ -85,7 +139,13 @@
     "subtopic": "Multiplayer",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["multiplayer", "repnotify", "replication", "late join", "door"]
+    "tags": [
+      "multiplayer",
+      "repnotify",
+      "replication",
+      "late join",
+      "door"
+    ]
   },
   {
     "question": "A player is supposed to control a pawn after spawning into the match, but input is not responding on the client. What would you check first?",
@@ -93,7 +153,13 @@
     "subtopic": "Multiplayer",
     "difficulty": "Intermediate",
     "category": "Scenario based",
-    "tags": ["multiplayer", "possession", "playercontroller", "input", "ownership"]
+    "tags": [
+      "multiplayer",
+      "possession",
+      "playercontroller",
+      "input",
+      "ownership"
+    ]
   },
   {
     "question": "A networked cosmetic effect should only be visible to players near the action, not everyone on the server. How would you handle it?",
@@ -101,7 +167,13 @@
     "subtopic": "Multiplayer",
     "difficulty": "Advanced",
     "category": "Scenario based",
-    "tags": ["multiplayer", "relevancy", "rpc", "cosmetic", "performance"]
+    "tags": [
+      "multiplayer",
+      "relevancy",
+      "rpc",
+      "cosmetic",
+      "performance"
+    ]
   },
   {
     "question": "A lobby system needs to move all players from a waiting map into the game map without dropping state like player data. How would you approach it?",
@@ -109,7 +181,13 @@
     "subtopic": "Multiplayer",
     "difficulty": "Advanced",
     "category": "Scenario based",
-    "tags": ["multiplayer", "seamless travel", "lobby", "playerstate", "travel"]
+    "tags": [
+      "multiplayer",
+      "seamless travel",
+      "lobby",
+      "playerstate",
+      "travel"
+    ]
   },
   {
     "question": "In a multiplayer project, you need to move players from a lobby map to a match map and sometimes reconnect them to a completely different server. Which travel type should you use in each case?",
@@ -117,6 +195,13 @@
     "subtopic": "Multiplayer",
     "difficulty": "Advanced",
     "category": "Scenario based",
-    "tags": ["multiplayer", "travel", "servertravel", "clienttravel", "browse", "lobby"]
+    "tags": [
+      "multiplayer",
+      "travel",
+      "servertravel",
+      "clienttravel",
+      "browse",
+      "lobby"
+    ]
   }
 ]
