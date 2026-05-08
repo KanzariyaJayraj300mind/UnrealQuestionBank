@@ -46,5 +46,77 @@
     "difficulty": "Intermediate",
     "category": "Scenario based",
     "tags": ["shader", "rotation", "collectible", "world-position-offset"]
+  },
+  {
+    "question": "In a shooting game, Player shoots Barrel A, Barrel A explodes and triggers Barrel B, and Barrel B explodes and kills an enemy. Who is the Damage Instigator and who is the Damage Causer?",
+    "answer": "Damage Instigator: Barrel B. Damage Causer: the player. The instigator is the actor that directly caused the final damage event, while the causer is the original source of the chain.",
+    "subtopic": "Damage System",
+    "difficulty": "Beginner",
+    "category": "Scenario based",
+    "tags": ["damage", "instigator", "causer", "scenario", "multiplayer"]
+  },
+  {
+    "question": "In a multiplayer shooter, a player fires a weapon and nearby clients must see the muzzle flash and impact effect. What networking pattern should you use?",
+    "answer": "Use a server-authoritative RPC for the shot logic, then a multicast or replicated visual event so all relevant clients spawn the cosmetic effect once.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["multiplayer", "rpc", "multicast", "visual effects", "replication"]
+  },
+  {
+    "question": "A pickup item should disappear for one player only after they collect it, but remain visible for others until they collect theirs. How would you implement that?",
+    "answer": "Use per-player ownership or a replicated state tied to the player, and update visibility locally for the owning client rather than destroying the actor globally.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["multiplayer", "ownership", "replication", "pickup", "visibility"]
+  },
+  {
+    "question": "A character is moving smoothly on the local client but rubber-banding on the server under lag. What is the likely issue and how would you address it?",
+    "answer": "The client-side prediction and server correction flow is probably not tuned well. Improve reconciliation, keep movement authoritative on the server, and ensure prediction data is corrected smoothly instead of snapping.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["multiplayer", "prediction", "correction", "movement", "lag"]
+  },
+  {
+    "question": "A player opens a door and all connected clients should see it open, but late-joining players should also see the door in its open state. What should you use?",
+    "answer": "Use a replicated state such as a replicated variable or RepNotify for the door state. Multicast can handle the immediate change, while replication ensures late-joining clients get the current state too.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["multiplayer", "repnotify", "replication", "late join", "door"]
+  },
+  {
+    "question": "A player is supposed to control a pawn after spawning into the match, but input is not responding on the client. What would you check first?",
+    "answer": "Check possession, controller ownership, and whether the pawn is correctly assigned to the owning PlayerController on the server. Also verify that input is being handled on the owning client.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Intermediate",
+    "category": "Scenario based",
+    "tags": ["multiplayer", "possession", "playercontroller", "input", "ownership"]
+  },
+  {
+    "question": "A networked cosmetic effect should only be visible to players near the action, not everyone on the server. How would you handle it?",
+    "answer": "Use relevancy or an owner-scoped RPC strategy so only relevant clients receive the effect. Avoid broadcasting with a global multicast if the effect does not need to be seen by everyone.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Advanced",
+    "category": "Scenario based",
+    "tags": ["multiplayer", "relevancy", "rpc", "cosmetic", "performance"]
+  },
+  {
+    "question": "A lobby system needs to move all players from a waiting map into the game map without dropping state like player data. How would you approach it?",
+    "answer": "Use seamless travel so preserved actors and player state can carry across the transition. Keep game state that must persist in PlayerState, GameInstance, or another travel-safe container.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Advanced",
+    "category": "Scenario based",
+    "tags": ["multiplayer", "seamless travel", "lobby", "playerstate", "travel"]
+  },
+  {
+    "question": "In a multiplayer project, you need to move players from a lobby map to a match map and sometimes reconnect them to a completely different server. Which travel type should you use in each case?",
+    "answer": "Use ServerTravel or seamless travel for the lobby-to-match transition on the same server so connected clients follow the server. Use ClientTravel when a client needs to connect to a different server or map directly. Browse is a hard reset and is usually reserved for full disconnect and load flow.",
+    "subtopic": "Multiplayer",
+    "difficulty": "Advanced",
+    "category": "Scenario based",
+    "tags": ["multiplayer", "travel", "servertravel", "clienttravel", "browse", "lobby"]
   }
 ]

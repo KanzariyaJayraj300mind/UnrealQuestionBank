@@ -96,14 +96,6 @@
     "tags": ["hit result", "collision", "trace", "impact point"]
   },
   {
-    "question": "In a shooting game, Player shoots Barrel A, Barrel A explodes and triggers Barrel B, and Barrel B explodes and kills an enemy. Who is the Damage Instigator and who is the Damage Causer?",
-    "answer": "Damage Instigator: Barrel B. Damage Causer: the player. The instigator is the actor that directly caused the final damage event, while the causer is the original source of the chain.",
-    "subtopic": "Damage System",
-    "difficulty": "Beginner",
-    "category": "Scenario based",
-    "tags": ["damage", "instigator", "causer", "scenario", "multiplayer"]
-  },
-  {
     "question": "What are Blueprint Interfaces in Unreal Engine, and when would you use them?",
     "answer": "Blueprint Interfaces define a common set of functions that multiple Blueprints can implement. They are useful when different Blueprint classes need to communicate without knowing each other's concrete class.",
     "subtopic": "Blueprints",
@@ -174,5 +166,61 @@
     "difficulty": "Intermediate",
     "category": "Core",
     "tags": ["data table", "soft reference", "hard reference", "assets"]
+  },
+  {
+    "question": "What is the role of GameInstance in Unreal Engine?",
+    "answer": "GameInstance is a persistent object that exists for the lifetime of the game session. It is useful for storing data that should survive level changes, such as player settings or session data.",
+    "subtopic": "Gameplay Framework",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["gameinstance", "lifetime", "persistent data", "framework"]
+  },
+  {
+    "question": "What is the difference between a Pawn and a Character?",
+    "answer": "A Pawn is any actor that can be possessed and controlled. A Character is a specialized Pawn that includes a movement component and a capsule-based character setup.",
+    "subtopic": "Gameplay Framework",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["pawn", "character", "possession", "movement"]
+  },
+  {
+    "question": "What is the typical lifecycle of an Actor in Unreal Engine?",
+    "answer": "An Actor is constructed, components are initialized, it enters the world, BeginPlay runs, it can Tick if enabled, and then it is destroyed when removed from the world.",
+    "subtopic": "Actors",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["actor", "lifecycle", "beginplay", "tick", "destroy"]
+  },
+  {
+    "question": "What is the difference between an Actor Component and a Scene Component?",
+    "answer": "An Actor Component adds reusable logic to an actor but does not have a transform. A Scene Component has a transform and can be attached to other scene components.",
+    "subtopic": "Components",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["components", "actor component", "scene component", "transform"]
+  },
+  {
+    "question": "What is the difference between enhanced input and the older input system at a high level?",
+    "answer": "Enhanced Input provides more flexible input mapping and context-based control compared to the older fixed bindings approach, making it easier to switch input behavior at runtime.",
+    "subtopic": "Input",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["input", "enhanced input", "mapping context", "controls"]
+  },
+  {
+    "question": "What is the difference between collision presets, object types, and collision responses?",
+    "answer": "Object types classify what an object is, collision presets bundle common collision settings, and collision responses define how one object responds to another object's type or channel.",
+    "subtopic": "Collision",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["collision", "presets", "object type", "responses"]
+  },
+  {
+    "question": "What is the difference between a static mesh and a skeletal mesh?",
+    "answer": "A static mesh is a non-animated mesh used for fixed geometry. A skeletal mesh is rigged to a skeleton and supports animation and deformation.",
+    "subtopic": "Rendering",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["static mesh", "skeletal mesh", "animation", "geometry"]
   }
 ]

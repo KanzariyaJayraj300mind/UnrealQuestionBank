@@ -22,5 +22,61 @@
     "difficulty": "Beginner",
     "category": "Core",
     "tags": ["ai", "behavior tree", "selector", "sequence"]
+  },
+  {
+    "question": "What is the role of an AIController in Unreal Engine?",
+    "answer": "An AIController owns and drives the AI pawn. It receives decisions from AI logic and sends movement or behavior commands to the controlled pawn.",
+    "subtopic": "AI Controller",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["ai", "aicontroller", "pawn", "controller"]
+  },
+  {
+    "question": "What is a Blackboard in Unreal AI?",
+    "answer": "A Blackboard is shared AI memory used to store keys such as target actors, locations, or state values that behavior trees can read and write.",
+    "subtopic": "Blackboard",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["ai", "blackboard", "memory", "behavior tree"]
+  },
+  {
+    "question": "How would you make an AI patrol and chase the player using a behavior tree?",
+    "answer": "Store patrol points and the current target in the blackboard, use a selector to switch between patrol and chase logic, and update blackboard keys from the AIController or perception events.",
+    "subtopic": "Behavior Tree",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["ai", "behavior tree", "patrol", "chase", "blackboard"]
+  },
+  {
+    "question": "How can AI Perception be used to detect the player?",
+    "answer": "Configure a perception sense such as Sight or Hearing on the AIController, then react to perception updates by setting blackboard keys or triggering behavior tree changes.",
+    "subtopic": "AI Perception",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["ai", "perception", "sight", "hearing", "blackboard"]
+  },
+  {
+    "question": "What is EQS used for in Unreal AI?",
+    "answer": "EQS, or Environment Query System, is used to find the best location or target based on rules and tests, such as cover points, patrol positions, or attack spots.",
+    "subtopic": "EQS",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["ai", "eqs", "environment query system", "cover"]
+  },
+  {
+    "question": "How do you debug AI behavior tree issues?",
+    "answer": "Use the behavior tree debugger, inspect blackboard values, verify perception events, and check whether the AIController is actually possessing the pawn and updating the expected keys.",
+    "subtopic": "Debugging",
+    "difficulty": "Intermediate",
+    "category": "Core",
+    "tags": ["ai", "debugging", "behavior tree", "blackboard", "perception"]
+  },
+  {
+    "question": "What is the difference between a Selector and a Sequence in behavior trees?",
+    "answer": "A Selector tries children until one succeeds, which is useful for choosing between alternatives. A Sequence runs children in order and fails as soon as one child fails, which is useful for ordered tasks.",
+    "subtopic": "Behavior Tree",
+    "difficulty": "Beginner",
+    "category": "Core",
+    "tags": ["ai", "selector", "sequence", "behavior tree"]
   }
 ]

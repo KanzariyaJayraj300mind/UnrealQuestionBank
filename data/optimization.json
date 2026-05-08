@@ -86,5 +86,37 @@
     "difficulty": "Intermediate",
     "category": "Core",
     "tags": ["instanced static mesh", "material", "instancing", "color variation"]
+  },
+  {
+    "question": "What is the main difference between Instanced Static Meshes and Hierarchical Instanced Static Meshes?",
+    "answer": "Instanced Static Meshes batch many copies of the same mesh to reduce draw calls. Hierarchical Instanced Static Meshes add a spatial hierarchy, which improves culling and makes them better for large scattered sets of repeated meshes.",
+    "subtopic": "Instancing",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["ism", "hism", "instancing", "culling", "draw calls"]
+  },
+  {
+    "question": "When should you prefer HISM over ISM?",
+    "answer": "Prefer HISM when you have a very large number of repeated meshes spread across the world and you want better culling behavior. ISM is usually enough for smaller or more localized sets where hierarchy overhead is unnecessary.",
+    "subtopic": "Instancing",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["hism", "ism", "optimization", "culling", "performance"]
+  },
+  {
+    "question": "Why can large HISM updates become expensive, and how would you reduce that cost?",
+    "answer": "HISM updates can be expensive because changes may require rebuilding or updating the instance hierarchy. Reduce cost by batching changes, avoiding frequent per-frame instance churn, and using spawn or removal patterns that minimize hierarchy rebuilds.",
+    "subtopic": "Instancing",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["hism", "performance", "hierarchy", "instance updates"]
+  },
+  {
+    "question": "What are the tradeoffs of using ISM/HISM for gameplay objects instead of individual actors?",
+    "answer": "ISM and HISM greatly reduce draw calls and memory overhead, but they make per-instance gameplay logic, unique collision handling, and individual animation or state management more difficult compared to separate actors.",
+    "subtopic": "Instancing",
+    "difficulty": "Hard",
+    "category": "Core",
+    "tags": ["ism", "hism", "tradeoffs", "gameplay", "collision"]
   }
 ]
